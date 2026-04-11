@@ -1,0 +1,138 @@
+.shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Red circle — top right */
+.circle {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  width: 70px;
+  height: 70px;
+  border: 4px solid #FF6B6B;
+  border-radius: 50%;
+}
+
+/* Black cross — bottom left */
+.cross {
+  position: absolute;
+  bottom: 12%;
+  left: 7%;
+  width: 50px;
+  height: 50px;
+  background:
+    linear-gradient(#000 0 0) center / 4px 100% no-repeat,
+    linear-gradient(#000 0 0) center / 100% 4px no-repeat;
+}
+
+[data-theme="dark"] .cross {
+  background:
+    linear-gradient(#FFD93D 0 0) center / 4px 100% no-repeat,
+    linear-gradient(#FFD93D 0 0) center / 100% 4px no-repeat;
+}
+
+/* Yellow square — top left */
+.square {
+  position: absolute;
+  top: 18%;
+  left: 10%;
+  width: 40px;
+  height: 40px;
+  background: #FFD93D;
+  border: 3px solid #000;
+}
+
+/* Violet triangle — bottom right */
+.triangle {
+  position: absolute;
+  bottom: 18%;
+  right: 10%;
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-bottom: 48px solid #C4B5FD;
+}
+
+/* Small dots */
+.dot1 {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+}
+
+[data-theme="dark"] .dot1 {
+  background: #FFFDF5;
+}
+
+.dot2 {
+  position: absolute;
+  bottom: 30%;
+  left: 14%;
+  width: 10px;
+  height: 10px;
+  background: #FF6B6B;
+  border-radius: 50%;
+}
+
+/* Decorative line */
+.line {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  width: 60px;
+  height: 4px;
+  background: #000;
+  transform-origin: left center;
+}
+
+[data-theme="dark"] .line {
+  background: rgba(250, 250, 250, 0.3);
+}
+
+@media (max-width: 640px) {
+  .circle {
+    width: 45px;
+    height: 45px;
+    top: 6%;
+    right: 5%;
+  }
+  .cross {
+    width: 35px;
+    height: 35px;
+    bottom: 8%;
+    left: 4%;
+  }
+  .square {
+    width: 28px;
+    height: 28px;
+    top: 12%;
+    left: 5%;
+  }
+  .triangle {
+    border-left-width: 18px;
+    border-right-width: 18px;
+    border-bottom-width: 32px;
+    bottom: 10%;
+    right: 5%;
+  }
+  .dot1 {
+    width: 10px;
+    height: 10px;
+  }
+  .dot2 {
+    width: 8px;
+    height: 8px;
+  }
+  .line {
+    width: 40px;
+  }
+}

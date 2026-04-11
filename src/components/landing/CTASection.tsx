@@ -1,26 +1,50 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
 import Link from "next/link";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import styles from "./CTASection.module.css";
 
 export function CTASection({ hasSession }: { hasSession: boolean }) {
   const t = useTranslations("landing.cta");
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-120px" });
+  const reducedMotion = useReducedMotion();
+
+  const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
 
   return (
     <section className={styles.ctaContainer}>
-      <motion.div 
+      <motion.div
+        ref={ref}
         className={styles.content}
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: "-150px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={reducedMotion ? false : { opacity: 0, scale: 0.9, rotate: -2 }}
+        animate={inView && !reducedMotion ? { opacity: 1, scale: 1, rotate: 0 } : undefined}
+        transition={{ ...spring, delay: 0.1 }}
       >
-        <h2>{t("heading")}</h2>
-        <p>{t("body")}</p>
-        
-        <div className={styles.btnWrapper}>
+        <motion.h2
+          initial={reducedMotion ? false : { opacity: 0, y: -30 }}
+          animate={inView && !reducedMotion ? { opacity: 1, y: 0 } : undefined}
+          transition={{ ...spring, delay: 0.25 }}
+        >
+          {t("heading")}
+        </motion.h2>
+        <motion.p
+          initial={reducedMotion ? false : { opacity: 0 }}
+          animate={inView && !reducedMotion ? { opacity: 1 } : undefined}
+          transition={{ duration: 0.4, delay: 0.4 }}
+        >
+          {t("body")}
+        </motion.p>
+
+        <motion.div
+          className={styles.btnWrapper}
+          initial={reducedMotion ? false : { opacity: 0, y: 20, scale: 0.8 }}
+          animate={inView && !reducedMotion ? { opacity: 1, y: 0, scale: 1 } : undefined}
+          transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.5 }}
+        >
           {hasSession ? (
             <Link href="/dashboard" className={styles.primaryBtn}>
               {t("ctaDashboard")}
@@ -30,9 +54,8 @@ export function CTASection({ hasSession }: { hasSession: boolean }) {
               {t("ctaStart")}
             </Link>
           )}
-        </div>
+        </motion.div>
       </motion.div>
-      <div className={styles.footerGlow} />
     </section>
   );
 }

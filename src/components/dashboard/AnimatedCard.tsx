@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface Props {
   children: ReactNode;
@@ -10,22 +11,27 @@ interface Props {
 }
 
 export function AnimatedCard({ children, index = 0, className }: Props) {
+  const reducedMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={reducedMotion ? false : { opacity: 0, y: 30, rotate: index % 2 === 0 ? -1 : 1 }}
+      animate={reducedMotion ? undefined : { opacity: 1, y: 0, rotate: 0 }}
       transition={{
-        duration: 0.45,
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
         delay: index * 0.08,
-        ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      whileHover={{
-        y: -4,
-        boxShadow: "0 8px 32px rgba(59, 130, 246, 0.15), 0 4px 24px rgba(0, 0, 0, 0.15)",
-        borderColor: "rgba(59, 130, 246, 0.2)",
-        transition: { duration: 0.2, ease: "easeOut" },
-      }}
+      whileHover={
+        reducedMotion
+          ? undefined
+          : {
+              y: -3,
+              transition: { type: "spring", stiffness: 400, damping: 15 },
+            }
+      }
     >
       {children}
     </motion.div>

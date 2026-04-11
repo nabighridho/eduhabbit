@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface Props {
   children: ReactNode;
@@ -12,28 +13,42 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
+};
+
+const containerNoMotion = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 40, scale: 0.97 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94] as const,
+      type: "spring" as const,
+      stiffness: 250,
+      damping: 22,
     },
   },
 };
 
+const itemNoMotion = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
+};
+
 export function DashboardShell({ children }: Props) {
+  const reducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      variants={containerVariants}
+      variants={reducedMotion ? containerNoMotion : containerVariants}
       initial="hidden"
       animate="visible"
     >
@@ -43,8 +58,10 @@ export function DashboardShell({ children }: Props) {
 }
 
 export function DashboardSection({ children, className }: { children: ReactNode; className?: string }) {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <motion.div variants={reducedMotion ? itemNoMotion : itemVariants} className={className}>
       {children}
     </motion.div>
   );

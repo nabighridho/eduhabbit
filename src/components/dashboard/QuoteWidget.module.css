@@ -1,43 +1,15 @@
 .card {
-  background: var(--color-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-glass-border);
-  border-radius: 1.25rem;
+  background: #FFD93D;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   padding: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.05) 0%,
-    rgba(139, 92, 246, 0.05) 100%
-  );
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
-.title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-muted);
-  margin: 0 0 0.75rem 0;
-}
+.title { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #000; margin: 0 0 0.75rem 0; }
 
-.quote {
-  margin: 0;
-  padding: 0;
-}
+.quote { margin: 0; padding: 0; }
 
-.text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text);
-  line-height: 1.6;
-  margin: 0 0 0.5rem 0;
-  font-style: italic;
-}
+.text { font-size: 1rem; font-weight: 600; color: #000; line-height: 1.6; margin: 0 0 0.5rem 0; font-style: italic; }
 
-.author {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  font-style: normal;
-}
+.author { font-size: 0.8125rem; color: rgba(0,0,0,0.6); font-style: normal; font-weight: 700; }

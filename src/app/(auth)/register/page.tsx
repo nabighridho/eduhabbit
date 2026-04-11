@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -54,14 +55,28 @@ export default function RegisterPage() {
     }
   }
 
+  const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
+
   return (
     <>
-      <div className={styles.header}>
+      <motion.div
+        className={styles.header}
+        initial={{ opacity: 0, y: -20, rotate: -2 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
+        transition={{ ...spring, delay: 0.1 }}
+      >
         <h1 className={styles.title}>{t("title")}</h1>
         <p className={styles.subtitle}>{t("subtitle")}</p>
-      </div>
+      </motion.div>
 
-      <form onSubmit={handleSubmit} className={styles.form} noValidate>
+      <motion.form
+        onSubmit={handleSubmit}
+        className={styles.form}
+        noValidate
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ ...spring, delay: 0.2 }}
+      >
         <div className={styles.field}>
           <label htmlFor="name" className={styles.label}>
             {t("nameLabel")}
@@ -135,14 +150,19 @@ export default function RegisterPage() {
         <button type="submit" className={styles.submitButton} disabled={isLoading}>
           {isLoading ? t("loadingButton") : t("submitButton")}
         </button>
-      </form>
+      </motion.form>
 
-      <p className={styles.footer}>
+      <motion.p
+        className={styles.footer}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.35 }}
+      >
         {t("hasAccount")}
         <Link href="/login" className={styles.link}>
           {t("loginLink")}
         </Link>
-      </p>
+      </motion.p>
     </>
   );
 }

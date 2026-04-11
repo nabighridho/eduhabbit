@@ -1,62 +1,27 @@
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-xl);
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   padding: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
+[data-theme="dark"] .card { background: #18181B; border-color: #FFFDF5; box-shadow: 4px 4px 0 #FFFDF5; }
 
-.title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
-}
+.title { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #000; margin-bottom: 1.25rem; }
+[data-theme="dark"] .title { color: rgba(250,250,250,0.5); }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 1rem;
-}
+.grid { display: flex; align-items: center; justify-content: space-around; gap: 1rem; }
 
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-}
+.stat { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.statValue { font-size: 1.5rem; font-weight: 900; color: #000; }
+[data-theme="dark"] .statValue { color: #FFFDF5; }
+.statLabel { font-size: 0.75rem; color: rgba(0,0,0,0.5); text-align: center; font-weight: 700; text-transform: uppercase; }
+[data-theme="dark"] .statLabel { color: rgba(250,250,250,0.4); }
 
-.statValue {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.statLabel {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  text-align: center;
-}
-
-.divider {
-  width: 1px;
-  height: 3rem;
-  background: rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-}
+.divider { width: 3px; height: 3rem; background: #000; flex-shrink: 0; }
+[data-theme="dark"] .divider { background: rgba(250,250,250,0.2); }
 
 @media (max-width: 480px) {
-  .grid {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .divider {
-    width: 80%;
-    height: 1px;
-  }
+  .grid { flex-direction: column; gap: 0.75rem; }
+  .divider { width: 80%; height: 3px; }
 }

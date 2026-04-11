@@ -406,6 +406,16 @@
     "switch": "Switch language"
   },
   "landing": {
+    "skipNav": "Skip to content",
+    "nav": {
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "signIn": "Sign In",
+      "getStarted": "Get Started",
+      "dashboard": "Dashboard",
+      "menuOpen": "Open menu",
+      "menuClose": "Close menu"
+    },
     "hero": {
       "badge": "Your Life. Optimized.",
       "title": "Master your",
@@ -413,7 +423,16 @@
       "subtitle": "Track tasks, health, finances, and streaks—all in one place.",
       "ctaDashboard": "Go to Dashboard",
       "ctaStart": "Start Your Journey",
-      "ctaSignIn": "Sign In"
+      "ctaSignIn": "Sign In",
+      "scrollHint": "Scroll to explore"
+    },
+    "stats": {
+      "items": [
+        { "value": "12K+", "label": "Habits Built" },
+        { "value": "500+", "label": "Active Users" },
+        { "value": "95%", "label": "Completion Rate" },
+        { "value": "4", "label": "Core Tools" }
+      ]
     },
     "story": {
       "items": [
@@ -459,6 +478,23 @@
       "body": "Join thousands of others who have transformed their chaotic routines into unstoppable momentum.",
       "ctaDashboard": "Return to Dashboard",
       "ctaStart": "Start for Free"
+    },
+    "footer": {
+      "tagline": "Build better habits and manage your daily life.",
+      "product": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "updates": "Updates",
+      "company": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact",
+      "getStarted": "Get Started",
+      "signIn": "Sign In",
+      "copyright": "© 2026 EduHabit. All rights reserved.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "ariaLabel": "Footer navigation"
     }
   }
 }

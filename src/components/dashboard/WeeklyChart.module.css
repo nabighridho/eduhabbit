@@ -1,146 +1,41 @@
 .card {
-  background: var(--color-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-glass-border);
-  border-radius: 1.25rem;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   padding: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
+[data-theme="dark"] .card { background: #18181B; border-color: #FFFDF5; box-shadow: 4px 4px 0 #FFFDF5; }
 
-.title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-muted);
-  margin: 0 0 1.25rem 0;
-}
+.title { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #000; margin: 0 0 1.25rem 0; }
+[data-theme="dark"] .title { color: rgba(250,250,250,0.5); }
 
-/* ─── Chart ───────────────────────────────────────────────────────────────── */
+.chart { display: flex; align-items: flex-end; gap: 0.5rem; height: 10rem; padding-bottom: 0.25rem; }
 
-.chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-  height: 10rem;
-  padding-bottom: 0.25rem;
-}
+.barCol { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; height: 100%; }
+.barWrapper { flex: 1; width: 100%; display: flex; align-items: flex-end; justify-content: center; }
+.bar { width: 70%; max-width: 2.5rem; overflow: hidden; display: flex; flex-direction: column; transition: height 0.4s ease; background: rgba(0,0,0,0.05); border: 2px solid #000; }
+[data-theme="dark"] .bar { background: rgba(255,255,255,0.05); border-color: rgba(250,250,250,0.2); }
+.barToday { border-color: #FF6B6B; border-width: 3px; }
 
-.barCol {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  height: 100%;
-}
+.segHabit { background: #4ECDC4; transition: height 0.3s ease; }
+.segTodo { background: #FFD93D; transition: height 0.3s ease; }
+.segHealth { background: #C4B5FD; transition: height 0.3s ease; }
 
-.barWrapper {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
+.dayLabel { font-size: 0.6875rem; color: rgba(0,0,0,0.5); font-weight: 700; text-transform: uppercase; }
+[data-theme="dark"] .dayLabel { color: rgba(250,250,250,0.4); }
+.dayToday { color: #FF6B6B; font-weight: 900; }
 
-.bar {
-  width: 70%;
-  max-width: 2.5rem;
-  border-radius: 0.375rem 0.375rem 0.125rem 0.125rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: height 0.4s ease;
-  background: rgba(255, 255, 255, 0.05);
-}
+.legend { display: flex; gap: 1rem; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 3px solid #000; }
+[data-theme="dark"] .legend { border-top-color: rgba(250,250,250,0.2); }
+.legendItem { display: flex; align-items: center; gap: 0.375rem; font-size: 0.6875rem; color: rgba(0,0,0,0.5); font-weight: 700; }
+[data-theme="dark"] .legendItem { color: rgba(250,250,250,0.4); }
+.legendDot { width: 0.5rem; height: 0.5rem; border: 2px solid #000; }
+.legendHabit { background: #4ECDC4; }
+.legendTodo { background: #FFD93D; }
+.legendHealth { background: #C4B5FD; }
 
-.barToday {
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
-}
-
-.segHabit {
-  background: #22c55e;
-  transition: height 0.3s ease;
-}
-
-.segTodo {
-  background: #3b82f6;
-  transition: height 0.3s ease;
-}
-
-.segHealth {
-  background: #a855f7;
-  transition: height 0.3s ease;
-}
-
-.dayLabel {
-  font-size: 0.6875rem;
-  color: var(--color-text-muted);
-  font-weight: 500;
-}
-
-.dayToday {
-  color: #3b82f6;
-  font-weight: 700;
-}
-
-/* ─── Legend ───────────────────────────────────────────────────────────────── */
-
-.legend {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--color-glass-border);
-}
-
-.legendItem {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  font-size: 0.6875rem;
-  color: var(--color-text-muted);
-}
-
-.legendDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-}
-
-.legendHabit {
-  background: #22c55e;
-}
-
-.legendTodo {
-  background: #3b82f6;
-}
-
-.legendHealth {
-  background: #a855f7;
-}
-
-/* ─── Loading ─────────────────────────────────────────────────────────────── */
-
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10rem;
-}
-
-.spinner {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 2px solid var(--color-glass-border);
-  border-top-color: #3b82f6;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+.loading { display: flex; align-items: center; justify-content: center; height: 10rem; }
+.spinner { width: 1.5rem; height: 1.5rem; border: 3px solid rgba(0,0,0,0.1); border-top-color: #FF6B6B; border-radius: 50%; animation: spin 0.6s linear infinite; }
+[data-theme="dark"] .spinner { border-color: rgba(250,250,250,0.1); border-top-color: #FF6B6B; }
+@keyframes spin { to { transform: rotate(360deg); } }

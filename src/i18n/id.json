@@ -406,6 +406,16 @@
     "switch": "Ganti bahasa"
   },
   "landing": {
+    "skipNav": "Langsung ke konten",
+    "nav": {
+      "features": "Fitur",
+      "howItWorks": "Cara Kerja",
+      "signIn": "Masuk",
+      "getStarted": "Mulai Sekarang",
+      "dashboard": "Beranda",
+      "menuOpen": "Buka menu",
+      "menuClose": "Tutup menu"
+    },
     "hero": {
       "badge": "Hidupmu. Teroptimasi.",
       "title": "Kuasai",
@@ -413,7 +423,16 @@
       "subtitle": "Lacak tugas, kesehatan, keuangan, dan streak—semua dalam satu tempat.",
       "ctaDashboard": "Ke Beranda",
       "ctaStart": "Mulai Perjalananmu",
-      "ctaSignIn": "Masuk"
+      "ctaSignIn": "Masuk",
+      "scrollHint": "Gulir untuk menjelajah"
+    },
+    "stats": {
+      "items": [
+        { "value": "12K+", "label": "Kebiasaan Terbentuk" },
+        { "value": "500+", "label": "Pengguna Aktif" },
+        { "value": "95%", "label": "Tingkat Penyelesaian" },
+        { "value": "4", "label": "Alat Utama" }
+      ]
     },
     "story": {
       "items": [
@@ -459,6 +478,23 @@
       "body": "Bergabunglah dengan ribuan orang lain yang telah mengubah rutinitas kacau mereka menjadi momentum tak terhentikan.",
       "ctaDashboard": "Kembali ke Beranda",
       "ctaStart": "Mulai Gratis"
+    },
+    "footer": {
+      "tagline": "Bangun kebiasaan lebih baik dan kelola kehidupan harianmu.",
+      "product": "Produk",
+      "features": "Fitur",
+      "pricing": "Harga",
+      "updates": "Pembaruan",
+      "company": "Perusahaan",
+      "about": "Tentang",
+      "blog": "Blog",
+      "contact": "Kontak",
+      "getStarted": "Mulai Sekarang",
+      "signIn": "Masuk",
+      "copyright": "© 2026 EduHabit. Hak cipta dilindungi.",
+      "privacy": "Privasi",
+      "terms": "Ketentuan",
+      "ariaLabel": "Navigasi footer"
     }
   }
 }

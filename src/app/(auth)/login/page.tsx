@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -51,14 +52,28 @@ export default function LoginPage() {
     }
   }
 
+  const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
+
   return (
     <>
-      <div className={styles.header}>
+      <motion.div
+        className={styles.header}
+        initial={{ opacity: 0, y: -20, rotate: -2 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
+        transition={{ ...spring, delay: 0.1 }}
+      >
         <h1 className={styles.title}>{t("title")}</h1>
         <p className={styles.subtitle}>{t("subtitle")}</p>
-      </div>
+      </motion.div>
 
-      <form onSubmit={handleCredentialsSubmit} className={styles.form} noValidate>
+      <motion.form
+        onSubmit={handleCredentialsSubmit}
+        className={styles.form}
+        noValidate
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ ...spring, delay: 0.2 }}
+      >
         <div className={styles.field}>
           <label htmlFor="email" className={styles.label}>
             {t("emailLabel")}
@@ -98,19 +113,27 @@ export default function LoginPage() {
         <button type="submit" className={styles.submitButton} disabled={isLoading}>
           {isLoading ? t("loadingButton") : t("submitButton")}
         </button>
-      </form>
+      </motion.form>
 
-      <div className={styles.divider}>
+      <motion.div
+        className={styles.divider}
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ ...spring, delay: 0.35 }}
+      >
         <span className={styles.dividerLine} />
         <span className={styles.dividerText}>or</span>
         <span className={styles.dividerLine} />
-      </div>
+      </motion.div>
 
-      <button
+      <motion.button
         type="button"
         className={styles.googleButton}
         onClick={handleGoogleSignIn}
         disabled={isLoading}
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ ...spring, delay: 0.45 }}
       >
         <svg className={styles.googleIcon} viewBox="0 0 24 24" aria-hidden="true">
           <path
@@ -131,14 +154,19 @@ export default function LoginPage() {
           />
         </svg>
         {t("googleButton")}
-      </button>
+      </motion.button>
 
-      <p className={styles.footer}>
+      <motion.p
+        className={styles.footer}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.55 }}
+      >
         {t("noAccount")}
         <Link href="/register" className={styles.link}>
           {t("registerLink")}
         </Link>
-      </p>
+      </motion.p>
     </>
   );
 }

@@ -1,9 +1,12 @@
 import { auth } from "@/lib/auth";
 import { SmoothScroll } from "@/components/landing/SmoothScroll";
+import { SkipNav } from "@/components/landing/SkipNav";
+import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { StorySection } from "@/components/landing/StorySection";
 import { FeaturesBento } from "@/components/landing/FeaturesBento";
 import { CTASection } from "@/components/landing/CTASection";
+import { Footer } from "@/components/landing/Footer";
 
 export default async function HomePage() {
   const session = await auth();
@@ -11,12 +14,15 @@ export default async function HomePage() {
 
   return (
     <SmoothScroll>
-      <main style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
+      <SkipNav />
+      <Navbar hasSession={hasSession} />
+      <main id="main-content" style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
         <HeroSection hasSession={hasSession} />
         <StorySection />
         <FeaturesBento />
         <CTASection hasSession={hasSession} />
       </main>
+      <Footer />
     </SmoothScroll>
   );
 }
