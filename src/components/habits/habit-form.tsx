@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { CustomSelect } from "@/components/ui/CustomSelect";
 import styles from "./habit-form.module.css";
 
 type HabitType = "exercise" | "work" | "fun" | "other";
@@ -61,17 +62,18 @@ export function HabitForm({ onSuccess, onCancel }: HabitFormProps) {
         </div>
         <div className={styles.field}>
           <label className={styles.label}>{t("form.type")}</label>
-          <select
-            className={`${styles.select} ${errors.type ? styles.inputError : ""}`}
+          <CustomSelect
+            options={[
+              { value: "exercise", label: t("types.exercise") },
+              { value: "work", label: t("types.work") },
+              { value: "fun", label: t("types.fun") },
+              { value: "other", label: t("types.other") },
+            ]}
             value={type}
-            onChange={e => { setType(e.target.value as HabitType); setErrors(prev => ({ ...prev, type: undefined })); }}
-          >
-            <option value="">—</option>
-            <option value="exercise">{t("types.exercise")}</option>
-            <option value="work">{t("types.work")}</option>
-            <option value="fun">{t("types.fun")}</option>
-            <option value="other">{t("types.other")}</option>
-          </select>
+            onChange={(v) => { setType(v as HabitType); setErrors(prev => ({ ...prev, type: undefined })); }}
+            disabled={loading}
+            accentColor="#4ECDC4"
+          />
           {errors.type && <span className={styles.error}>{errors.type}</span>}
         </div>
         <div className={styles.actions}>

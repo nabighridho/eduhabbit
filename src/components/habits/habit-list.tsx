@@ -48,21 +48,12 @@ export function HabitList() {
     showToast(t("toast.added"));
   };
 
-  const handleToggle = async (id: string, completedToday: boolean) => {
-    if (completedToday) {
-      const res = await fetch(`/api/habits/${id}/log`, { method: "DELETE" });
-      if (res.ok || res.status === 204) {
-        setHabits(prev => prev.map(h => h.id === id ? { ...h, completedToday: false } : h));
-        setSummary(prev => ({ ...prev, completed: Math.max(0, prev.completed - 1) }));
-        showToast(t("toast.unchecked"));
-      }
-    } else {
-      const res = await fetch(`/api/habits/${id}/log`, { method: "POST" });
-      if (res.ok) {
-        setHabits(prev => prev.map(h => h.id === id ? { ...h, completedToday: true } : h));
-        setSummary(prev => ({ ...prev, completed: prev.completed + 1 }));
-        showToast(t("toast.completed"));
-      }
+  const handleToggle = async (id: string) => {
+    const res = await fetch(`/api/habits/${id}/log`, { method: "POST" });
+    if (res.ok) {
+      setHabits(prev => prev.map(h => h.id === id ? { ...h, completedToday: true } : h));
+      setSummary(prev => ({ ...prev, completed: prev.completed + 1 }));
+      showToast(t("toast.completed"));
     }
   };
 

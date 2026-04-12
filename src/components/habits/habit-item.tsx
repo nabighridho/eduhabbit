@@ -37,13 +37,18 @@ export function HabitItem({ habit, onToggle, onDeactivate, onActivate, onDelete 
     <div className={`${styles.item} ${!habit.active ? styles.inactive : ""}`}>
       <div className={styles.left}>
         {habit.active ? (
-          <button
-            className={`${styles.checkbox} ${habit.completedToday ? styles.checked : ""}`}
-            onClick={() => onToggle(habit.id, habit.completedToday)}
-            aria-label={habit.completedToday ? t("toast.unchecked") : t("toast.completed")}
-          >
-            {habit.completedToday && <span className={styles.checkmark}><LuCheck size={16} /></span>}
-          </button>
+          habit.completedToday ? (
+            <div className={`${styles.checkbox} ${styles.checked} ${styles.checkboxDone}`}>
+              <span className={styles.checkmark}><LuCheck size={16} /></span>
+            </div>
+          ) : (
+            <button
+              className={styles.checkbox}
+              onClick={() => onToggle(habit.id, false)}
+              aria-label={t("toast.completed")}
+            >
+            </button>
+          )
         ) : (
           <div className={styles.inactiveDot} />
         )}
