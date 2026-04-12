@@ -25,6 +25,7 @@ import { HealthWidget } from "@/components/dashboard/HealthWidget";
 import { QuoteWidget } from "@/components/dashboard/QuoteWidget";
 import { DashboardShell, DashboardSection } from "@/components/dashboard/DashboardShell";
 import { ParallaxBackground } from "@/components/dashboard/ParallaxBackground";
+import { PageTransition } from "@/components/dashboard/PageTransition";
 import styles from "./page.module.css";
 
 function getGreeting(): string {
@@ -163,6 +164,7 @@ export default async function DashboardPage() {
 
   // ── Render ──────────────────────────────────────────────────────
   return (
+    <PageTransition>
     <ParallaxBackground>
     <DashboardShell>
     <div className={styles.container}>
@@ -289,5 +291,6 @@ export default async function DashboardPage() {
     </div>
     </DashboardShell>
     </ParallaxBackground>
+    </PageTransition>
   );
 }

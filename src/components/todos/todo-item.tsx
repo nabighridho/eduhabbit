@@ -44,7 +44,7 @@ export function TodoItem({ todo, onComplete, onEdit, onCancel, onRestore, onDele
   const dueToday = todo.status === "pending" && isDueToday(todo.dueDate);
 
   return (
-    <div className={`${styles.item} glass ${todo.status === "done" ? styles.itemDone : ""} ${overdue ? styles.overdue : ""}`}>
+    <div className={`${styles.item} ${todo.status === "done" ? styles.itemDone : ""} ${overdue ? styles.overdue : ""}`}>
       <div className={styles.left}>
         {todo.status === "pending" && (
           <button className={styles.checkBtn} onClick={() => onComplete(todo.id)} title={t("form.save")} />

@@ -42,7 +42,7 @@ export function ProfileDashboard({ initialProfile }: ProfileDashboardProps) {
   };
 
   return (
-    <div className={`glass ${styles.card}`}>
+    <div className={styles.card}>
       <div className={styles.avatarSection}>
         <AvatarUpload
           initialImage={currentImage}

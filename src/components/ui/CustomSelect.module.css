@@ -1,0 +1,131 @@
+.wrapper {
+  position: relative;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+/* ─── Trigger ────────────────────────────────────────────────────────────── */
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  color: #000;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-align: left;
+}
+
+[data-theme="dark"] .trigger {
+  background: #09090B;
+  border-color: rgba(250, 250, 250, 0.3);
+  box-shadow: 3px 3px 0 rgba(250, 250, 250, 0.3);
+  color: #FFFDF5;
+}
+
+.trigger:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+[data-theme="dark"] .trigger:hover {
+  box-shadow: 2px 2px 0 rgba(250, 250, 250, 0.3);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.triggerOpen {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.triggerText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ─── Menu ───────────────────────────────────────────────────────────────── */
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  max-height: 220px;
+  overflow-y: auto;
+  transform-origin: top center;
+}
+
+[data-theme="dark"] .menu {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
+}
+
+/* ─── Option ─────────────────────────────────────────────────────────────── */
+
+.option {
+  padding: 0.625rem 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+[data-theme="dark"] .option {
+  color: #FFFDF5;
+}
+
+.option + .option {
+  border-top: 2px solid #000;
+}
+
+[data-theme="dark"] .option + .option {
+  border-top-color: rgba(250, 250, 250, 0.15);
+}
+
+.option:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .option:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.optionActive {
+  color: #000;
+  font-weight: 800;
+}
+
+.optionActive:hover {
+  opacity: 0.9;
+}

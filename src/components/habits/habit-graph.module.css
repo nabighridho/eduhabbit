@@ -1,20 +1,27 @@
 .wrapper {
   padding: 1.25rem 1.5rem;
-  border-radius: var(--radius-lg);
   margin-top: 2rem;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
 .title {
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-text);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
   margin-bottom: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .loading {
-  color: var(--color-text-muted);
+  color: #000;
   font-size: 0.875rem;
+  font-weight: 600;
   padding: 1rem 0;
+  opacity: 0.6;
 }
 
 .scrollArea {
@@ -36,8 +43,11 @@
 
 .monthLabel {
   font-size: 0.7rem;
-  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
   white-space: nowrap;
+  opacity: 0.6;
 }
 
 .grid {
@@ -51,7 +61,7 @@
 .cell {
   width: 13px;
   height: 13px;
-  border-radius: 2px;
+  border: 1px solid #000;
   transition: opacity 0.15s;
 }
 
@@ -59,11 +69,11 @@
   opacity: 0.75;
 }
 
-.c0 { background: var(--color-border); }
-.c1 { background: rgba(59, 130, 246, 0.25); }
-.c2 { background: rgba(59, 130, 246, 0.5); }
-.c3 { background: rgba(59, 130, 246, 0.75); }
-.c4 { background: var(--color-primary); }
+.c0 { background: rgba(0, 0, 0, 0.06); }
+.c1 { background: rgba(78, 205, 196, 0.25); }
+.c2 { background: rgba(78, 205, 196, 0.5); }
+.c3 { background: rgba(78, 205, 196, 0.75); }
+.c4 { background: #4ECDC4; }
 
 .legend {
   display: flex;
@@ -75,11 +85,49 @@
 
 .legendLabel {
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.6;
 }
 
 .legendCell {
   width: 11px;
   height: 11px;
-  border-radius: 2px;
+  border: 1px solid #000;
+}
+
+/* Dark mode */
+[data-theme="dark"] .wrapper {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 6px 6px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .title {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .loading {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .monthLabel {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .cell {
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] .c0 {
+  background: rgba(255, 253, 245, 0.06);
+}
+
+[data-theme="dark"] .legendLabel {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .legendCell {
+  border-color: #FFFDF5;
 }

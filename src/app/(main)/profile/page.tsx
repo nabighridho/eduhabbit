@@ -4,6 +4,7 @@ import { db } from "@/db";
 import { users, userBadges } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { getTranslations } from "next-intl/server";
+import { PageTransition } from "@/components/dashboard/PageTransition";
 import { ProfileDashboard } from "@/components/profile/ProfileDashboard";
 import styles from "./page.module.css";
 
@@ -35,21 +36,25 @@ export default async function ProfilePage() {
     Boolean(user.image);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{t("title")}</h1>
-        <p className={styles.subtitle}>{t("subtitle")}</p>
+    <PageTransition>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            <span className={styles.titleAccent}>{t("title")}</span>
+          </h1>
+          <p className={styles.subtitle}>{t("subtitle")}</p>
+        </div>
+        <ProfileDashboard
+          initialProfile={{
+            name: user.name ?? null,
+            status: user.status ?? null,
+            image: user.image ?? null,
+            email: user.email,
+            firstStepsBadgeEligible,
+            firstStepsBadgeClaimed,
+          }}
+        />
       </div>
-      <ProfileDashboard
-        initialProfile={{
-          name: user.name ?? null,
-          status: user.status ?? null,
-          image: user.image ?? null,
-          email: user.email,
-          firstStepsBadgeEligible,
-          firstStepsBadgeClaimed,
-        }}
-      />
-    </div>
+    </PageTransition>
   );
 }

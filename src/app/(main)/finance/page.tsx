@@ -5,6 +5,7 @@ import { savingsTargets, savingsTransactions } from "@/db/schema";
 import { eq, desc, and, inArray } from "drizzle-orm";
 import { getTranslations } from "next-intl/server";
 import { SavingsDashboard } from "@/components/finance/savings-dashboard";
+import { PageTransition } from "@/components/dashboard/PageTransition";
 import styles from "./page.module.css";
 
 export default async function FinancePage() {
@@ -42,17 +43,19 @@ export default async function FinancePage() {
     .orderBy(desc(savingsTargets.createdAt));
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{t("title")}</h1>
-        <p className={styles.subtitle}>{t("subtitle")}</p>
+    <PageTransition>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}><span className={styles.titleAccent}>{t("title")}</span></h1>
+          <p className={styles.subtitle}>{t("subtitle")}</p>
+        </div>
+        <SavingsDashboard
+          initialTarget={activeTarget ?? null}
+          initialTransactions={transactions}
+          initialPastTargets={pastTargets}
+          initialBadgeStatus={[]}
+        />
       </div>
-      <SavingsDashboard
-        initialTarget={activeTarget ?? null}
-        initialTransactions={transactions}
-        initialPastTargets={pastTargets}
-        initialBadgeStatus={[]}
-      />
-    </div>
+    </PageTransition>
   );
 }

@@ -45,7 +45,7 @@ export function HabitForm({ onSuccess, onCancel }: HabitFormProps) {
   };
 
   return (
-    <div className={`${styles.form} glass`}>
+    <div className={styles.form}>
       <h2 className={styles.formTitle}>{t("addHabit")}</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.field}>

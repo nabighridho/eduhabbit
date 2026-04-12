@@ -48,7 +48,7 @@ export function PointsHistory({ initialHistory, initialTotal }: PointsHistoryPro
   };
 
   return (
-    <div className={`glass ${styles.container}`}>
+    <div className={styles.container}>
       <h2 className={styles.title}>{t("pointsHistory")}</h2>
 
       {history.length === 0 ? (
@@ -56,7 +56,7 @@ export function PointsHistory({ initialHistory, initialTotal }: PointsHistoryPro
       ) : (
         <ul className={styles.list}>
           {history.map((entry, idx) => (
-            <li key={entry.id} className={`${styles.entry} ${idx % 2 === 1 ? styles.entryAlt : ""}`}>
+            <li key={entry.id} className={styles.entry}>
               <div className={styles.entryLeft}>
                 <span className={styles.action}>{entry.description ?? entry.action}</span>
               </div>

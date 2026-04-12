@@ -3,8 +3,11 @@
   align-items: center;
   gap: 1rem;
   padding: 0.875rem 1.1rem;
-  border-radius: var(--radius-md);
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   transition: opacity 0.2s;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
 .inactive {
@@ -20,8 +23,7 @@
 .checkbox {
   width: 22px;
   height: 22px;
-  border-radius: 50%;
-  border: 2px solid var(--color-primary);
+  border: 3px solid #000;
   background: transparent;
   cursor: pointer;
   display: flex;
@@ -32,16 +34,16 @@
 }
 
 .checkbox:hover {
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(78, 205, 196, 0.2);
 }
 
 .checked {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: #4ECDC4;
+  border-color: #000;
 }
 
 .checkmark {
-  color: #fff;
+  color: #000;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
@@ -50,9 +52,9 @@
 .inactiveDot {
   width: 22px;
   height: 22px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
+  border: 3px solid #000;
   background: transparent;
+  opacity: 0.4;
 }
 
 .content {
@@ -65,8 +67,8 @@
 
 .title {
   font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--color-text);
+  font-weight: 700;
+  color: #000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -74,7 +76,7 @@
 
 .titleDone {
   text-decoration: line-through;
-  color: var(--color-text-muted);
+  opacity: 0.5;
 }
 
 .badges {
@@ -86,42 +88,44 @@
 .typeBadge {
   display: inline-block;
   padding: 0.15rem 0.55rem;
-  border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
 }
 
 .typeExercise {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
+  background: #00D4FF;
+  color: #000;
 }
 
 .typeWork {
-  background: rgba(139, 92, 246, 0.15);
-  color: #a78bfa;
+  background: #A78BFA;
+  color: #000;
 }
 
 .typeFun {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
+  background: #7CFF6B;
+  color: #000;
 }
 
 .typeOther {
-  background: rgba(156, 163, 175, 0.15);
-  color: #9ca3af;
+  background: #FF9F43;
+  color: #000;
 }
 
 .inactiveBadge {
   display: inline-block;
   padding: 0.15rem 0.55rem;
-  border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(156, 163, 175, 0.1);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+  opacity: 0.5;
 }
 
 .actions {
@@ -132,26 +136,92 @@
 
 .actionBtn {
   background: transparent;
-  border: none;
+  border: 2px solid #000;
   cursor: pointer;
   padding: 0.3rem;
-  border-radius: var(--radius-sm);
   font-size: 1rem;
   line-height: 1;
-  color: var(--color-text-muted);
-  transition: background 0.15s, color 0.15s;
+  color: #000;
+  transition: background 0.15s, color 0.15s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: 2px 2px 0 #000;
 }
 
 .actionBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-text);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.actionBtn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 #000;
 }
 
 .activateBtn {
-  color: var(--color-success);
+  color: #4ECDC4;
 }
 
 .deleteBtn:hover {
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--color-error);
+  background: #FF6B9D;
+  color: #000;
+}
+
+/* Dark mode */
+[data-theme="dark"] .item {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .checkbox {
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] .checkbox:hover {
+  background: rgba(78, 205, 196, 0.3);
+}
+
+[data-theme="dark"] .checked {
+  background: #4ECDC4;
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] .checkmark {
+  color: #000;
+}
+
+[data-theme="dark"] .inactiveDot {
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] .title {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .typeBadge {
+  border-color: #FFFDF5;
+  box-shadow: 3px 3px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .inactiveBadge {
+  color: #FFFDF5;
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] .actionBtn {
+  color: #FFFDF5;
+  border-color: #FFFDF5;
+  box-shadow: 2px 2px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .actionBtn:hover {
+  box-shadow: 1px 1px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .actionBtn:active {
+  box-shadow: 0 0 0 #FFFDF5;
+}
+
+[data-theme="dark"] .deleteBtn:hover {
+  background: #FF6B9D;
+  color: #000;
 }

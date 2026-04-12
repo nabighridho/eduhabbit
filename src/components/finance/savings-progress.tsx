@@ -20,7 +20,7 @@ export function SavingsProgress({ target, onAddMoney, onComplete, onCancel }: Sa
     amount.toLocaleString();
 
   return (
-    <div className={`${styles.card} glass`}>
+    <div className={styles.card}>
       <p className={styles.purpose}>{target.purpose}</p>
 
       <div className={styles.percentageRow}>

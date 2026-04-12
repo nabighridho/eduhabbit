@@ -130,7 +130,7 @@ export function SavingsDashboard({
           onCancel={handleCancel}
         />
       ) : (
-        <div className={`${styles.emptyState} glass`}>
+        <div className={styles.emptyState}>
           <p className={styles.emptyText}>{t("noActiveTarget")}</p>
           <button className={styles.emptyButton} onClick={() => setShowCreateForm(true)}>
             {t("createFirst")}

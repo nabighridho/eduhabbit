@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import styles from "./register.module.css";
 
 export default function RegisterPage() {
   const t = useTranslations("auth.register");
-  const router = useRouter();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +46,18 @@ export default function RegisterPage() {
         return;
       }
 
-      router.push("/login");
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        setError(t("errorGeneric"));
+        return;
+      }
+
+      window.location.href = "/dashboard";
     } catch {
       setError(t("errorGeneric"));
     } finally {

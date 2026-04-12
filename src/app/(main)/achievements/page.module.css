@@ -1,39 +1,77 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.cardContent {
-  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
 .title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+[data-theme="dark"] .title {
+  color: #FFFDF5;
+}
+
+.titleAccent {
+  color: #FF9F43;
+  -webkit-text-fill-color: #FF9F43;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+[data-theme="dark"] .subtitle {
+  color: rgba(250, 250, 250, 0.5);
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #000;
+  margin: 0 0 0.75rem 0;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .sectionTitle {
+  color: #FFFDF5;
 }
 
 .comingSoon {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.375rem 1rem;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: var(--radius-xl);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-primary);
+  background: #FF9F43;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .comingSoon {
+  border-color: #FFFDF5;
+  box-shadow: 3px 3px 0 #FFFDF5;
 }

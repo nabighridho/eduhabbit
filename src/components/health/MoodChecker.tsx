@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import type { Mood } from "@/db/schema";
+import { CustomSelect } from "@/components/ui/CustomSelect";
 import styles from "./MoodChecker.module.css";
 
 interface MoodCheckerProps {
@@ -71,18 +72,16 @@ export function MoodChecker({ initialMood, onSuccess }: MoodCheckerProps) {
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.field}>
         <label className={styles.label}>{t("label")}</label>
-        <select
-          className={styles.select}
+        <CustomSelect
+          options={["great", "good", "okay", "bad", "awful"].map((opt) => ({
+            value: opt,
+            label: t(`options.${opt}`),
+          }))}
           value={mood}
-          onChange={(e) => setMood(e.target.value)}
+          onChange={setMood}
           disabled={loading}
-        >
-          {(["great", "good", "okay", "bad", "awful"] as const).map((opt) => (
-            <option key={opt} value={opt}>
-              {t(`options.${opt}`)}
-            </option>
-          ))}
-        </select>
+          accentColor="#FF6B9D"
+        />
       </div>
 
       <div className={styles.field}>

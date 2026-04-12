@@ -32,7 +32,7 @@ export function TransactionForm({ target, onSubmit, onClose }: TransactionFormPr
   };
 
   return (
-    <div className={`${styles.form} glass`}>
+    <div className={styles.form}>
       <h2 className={styles.heading}>{t("addMoneyTitle")}</h2>
       <p className={styles.targetName}>{target.purpose}</p>
       <p className={styles.remaining}>

@@ -30,7 +30,7 @@ export function FinanceBadges({ badges }: FinanceBadgesProps) {
       <h2 className={styles.heading}>{t("badges")}</h2>
       <div className={styles.grid}>
         {badges.map(badge => (
-          <div key={badge.id} className={`${styles.badge} glass`}>
+          <div key={badge.id} className={styles.badge}>
             <p className={styles.badgeName}>{badge.name}</p>
             <p className={styles.badgeDesc}>{t(`badgeDesc.${badge.id}`)}</p>
             <span className={`${styles.statusChip} ${getStatusClass(badge)}`}>

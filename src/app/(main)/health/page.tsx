@@ -5,6 +5,7 @@ import { moods, sleepAnalyses, nutritionLogs } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { getTranslations } from "next-intl/server";
 import { HealthDashboard } from "@/components/health/HealthDashboard";
+import { PageTransition } from "@/components/dashboard/PageTransition";
 import styles from "./page.module.css";
 
 export default async function HealthPage() {
@@ -38,16 +39,20 @@ export default async function HealthPage() {
     .limit(1);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{t("title")}</h1>
-        <p className={styles.subtitle}>{t("subtitle")}</p>
+    <PageTransition>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            <span className={styles.titleAccent}>{t("title")}</span>
+          </h1>
+          <p className={styles.subtitle}>{t("subtitle")}</p>
+        </div>
+        <HealthDashboard
+          initialMood={initialMood ?? null}
+          initialSleep={initialSleep ?? null}
+          initialNutrition={initialNutrition ?? null}
+        />
       </div>
-      <HealthDashboard
-        initialMood={initialMood ?? null}
-        initialSleep={initialSleep ?? null}
-        initialNutrition={initialNutrition ?? null}
-      />
-    </div>
+    </PageTransition>
   );
 }

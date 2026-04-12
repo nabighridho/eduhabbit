@@ -246,8 +246,11 @@
     "sleep": {
       "title": "Analisis Tidur",
       "description": "Analisis tidurmu dan dapatkan tips perbaikan",
-      "sleepStart": "Kapan kamu mulai tidur?",
-      "sleepEnd": "Kapan kamu bangun?",
+      "sleepStart": "Waktu tidur",
+      "sleepEnd": "Waktu bangun",
+      "lastNight": "Tadi malam",
+      "thisMorning": "Pagi ini",
+      "hours": "jam tidur",
       "submit": "Analisis Tidur",
       "alreadyDone": "Kamu sudah menganalisis tidurmu hari ini",
       "result": "Analisis tidur kamu"

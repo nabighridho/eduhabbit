@@ -24,7 +24,7 @@ export function PastTargets({ targets }: PastTargetsProps) {
       <h2 className={styles.heading}>{t("pastTargets")}</h2>
       <ul className={styles.list}>
         {targets.map(target => (
-          <li key={target.id} className={`${styles.item} glass`}>
+          <li key={target.id} className={styles.item}>
             <div className={styles.itemHeader}>
               <span className={styles.purpose}>{target.purpose}</span>
               <span className={`${styles.statusBadge} ${styles[target.status]}`}>

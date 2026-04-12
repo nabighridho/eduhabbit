@@ -83,7 +83,7 @@ export function HabitGraph() {
 
   if (loading) {
     return (
-      <div className={`${styles.wrapper} glass`}>
+      <div className={styles.wrapper}>
         <h3 className={styles.title}>{t("graph.title")}</h3>
         <div className={styles.loading}>...</div>
       </div>
@@ -91,7 +91,7 @@ export function HabitGraph() {
   }
 
   return (
-    <div className={`${styles.wrapper} glass`}>
+    <div className={styles.wrapper}>
       <h3 className={styles.title}>{t("graph.title")}</h3>
       <div className={styles.scrollArea}>
         <div className={styles.graphContainer}>

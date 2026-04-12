@@ -34,7 +34,7 @@ export function HabitItem({ habit, onToggle, onDeactivate, onActivate, onDelete 
   const t = useTranslations("habits");
 
   return (
-    <div className={`${styles.item} glass ${!habit.active ? styles.inactive : ""}`}>
+    <div className={`${styles.item} ${!habit.active ? styles.inactive : ""}`}>
       <div className={styles.left}>
         {habit.active ? (
           <button

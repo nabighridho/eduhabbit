@@ -1,35 +1,126 @@
 .filters {
   display: flex;
-  gap: 0.25rem;
+  gap: 0;
   flex-wrap: wrap;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  width: fit-content;
+}
+
+[data-theme="dark"] .filters {
+  border-color: #FFFDF5;
+  box-shadow: 3px 3px 0 #FFFDF5;
 }
 
 .tab {
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  border: none;
   background: transparent;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.15s, background 0.15s;
+}
+
+[data-theme="dark"] .tab {
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.tab + .tab {
+  border-left: 3px solid #000;
+}
+
+[data-theme="dark"] .tab + .tab {
+  border-left-color: #FFFDF5;
 }
 
 .tab:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  color: #000;
+  background: rgba(0, 0, 0, 0.04);
 }
 
-.active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-  font-weight: 600;
+[data-theme="dark"] .tab:hover {
+  color: #FFFDF5;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-@media (max-width: 480px) {
+.active_all {
+  background: #FFD93D;
+  color: #000;
+}
+
+.active_all:hover {
+  background: #FFD93D;
+  color: #000;
+}
+
+[data-theme="dark"] .active_all,
+[data-theme="dark"] .active_all:hover {
+  background: #FFD93D;
+  color: #000;
+}
+
+.active_pending {
+  background: #FF9F43;
+  color: #000;
+}
+
+.active_pending:hover {
+  background: #FF9F43;
+  color: #000;
+}
+
+[data-theme="dark"] .active_pending,
+[data-theme="dark"] .active_pending:hover {
+  background: #FF9F43;
+  color: #000;
+}
+
+.active_done {
+  background: #00D4FF;
+  color: #000;
+}
+
+.active_done:hover {
+  background: #00D4FF;
+  color: #000;
+}
+
+[data-theme="dark"] .active_done,
+[data-theme="dark"] .active_done:hover {
+  background: #00D4FF;
+  color: #000;
+}
+
+.active_cancelled {
+  background: #C4B5FD;
+  color: #000;
+}
+
+.active_cancelled:hover {
+  background: #C4B5FD;
+  color: #000;
+}
+
+[data-theme="dark"] .active_cancelled,
+[data-theme="dark"] .active_cancelled:hover {
+  background: #C4B5FD;
+  color: #000;
+}
+
+@media (max-width: 640px) {
+  .filters {
+    width: 100%;
+  }
+
   .tab {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.8rem;
+    flex: 1;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
+    text-align: center;
   }
 }

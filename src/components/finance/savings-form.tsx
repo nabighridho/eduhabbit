@@ -38,7 +38,7 @@ export function SavingsForm({ onSubmit, onClose }: SavingsFormProps) {
   };
 
   return (
-    <div className={`${styles.form} glass`}>
+    <div className={styles.form}>
       <h2 className={styles.heading}>{t("createTarget")}</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.field}>

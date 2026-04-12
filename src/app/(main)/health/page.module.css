@@ -1,5 +1,5 @@
 .container {
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -10,18 +10,34 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
 .title {
   font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin: 0;
 }
 
+[data-theme="dark"] .title {
+  color: #FFFDF5;
+}
+
+.titleAccent {
+  color: #FF6B9D;
+  -webkit-text-fill-color: #FF6B9D;
+}
+
 .subtitle {
-  font-size: 1rem;
-  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
+}
+
+[data-theme="dark"] .subtitle {
+  color: rgba(250, 250, 250, 0.5);
 }

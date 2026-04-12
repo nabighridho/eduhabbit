@@ -1,27 +1,47 @@
 .wrapper {
   position: relative;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
+
+/* ─── Toast ──────────────────────────────────────────────────────────────── */
 
 .toast {
   position: fixed;
   top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  color: #fff;
+  background: #C4B5FD;
+  color: #000;
   padding: 0.625rem 1.5rem;
-  border-radius: var(--radius-xl, 9999px);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   font-size: 0.95rem;
-  font-weight: 600;
-  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.4);
+  font-weight: 700;
   z-index: 1000;
-  animation: fadeInUp 0.25s ease;
+  animation: slideDown 0.25s ease;
 }
 
-@keyframes fadeInUp {
+[data-theme="dark"] .toast {
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
+}
+
+.toast_mood {
+  background: #FF6B9D;
+}
+
+.toast_sleep {
+  background: #A78BFA;
+}
+
+.toast_nutrition {
+  background: #7CFF6B;
+}
+
+@keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-8px);
+    transform: translateX(-50%) translateY(-12px);
   }
   to {
     opacity: 1;
@@ -29,14 +49,29 @@
   }
 }
 
+/* ─── Card ───────────────────────────────────────────────────────────────── */
+
 .card {
-  border-radius: var(--radius-xl, 1rem);
-  overflow: hidden;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
 }
+
+[data-theme="dark"] .card {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 6px 6px 0 #FFFDF5;
+}
+
+/* ─── Tabs ───────────────────────────────────────────────────────────────── */
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid #000;
+}
+
+[data-theme="dark"] .tabs {
+  border-bottom-color: #FFFDF5;
 }
 
 .tab {
@@ -45,22 +80,74 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  transition: color 0.2s, background 0.2s;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.15s, background 0.15s;
+}
+
+[data-theme="dark"] .tab {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .tab:hover {
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.05);
+  color: #000;
+  background: rgba(0, 0, 0, 0.04);
 }
 
-.tabActive {
-  color: var(--color-primary, #3b82f6);
-  border-bottom: 2px solid var(--color-primary, #3b82f6);
-  font-weight: 600;
+[data-theme="dark"] .tab:hover {
+  color: #FFFDF5;
+  background: rgba(255, 255, 255, 0.04);
 }
+
+.tab + .tab {
+  border-left: 3px solid #000;
+}
+
+[data-theme="dark"] .tab + .tab {
+  border-left-color: #FFFDF5;
+}
+
+.tabActive_mood {
+  color: #000;
+  background: #FF6B9D;
+}
+
+[data-theme="dark"] .tabActive_mood,
+.tabActive_mood:hover,
+[data-theme="dark"] .tabActive_mood:hover {
+  color: #000;
+  background: #FF6B9D;
+}
+
+.tabActive_sleep {
+  color: #000;
+  background: #A78BFA;
+}
+
+[data-theme="dark"] .tabActive_sleep,
+.tabActive_sleep:hover,
+[data-theme="dark"] .tabActive_sleep:hover {
+  color: #000;
+  background: #A78BFA;
+}
+
+.tabActive_nutrition {
+  color: #000;
+  background: #7CFF6B;
+}
+
+[data-theme="dark"] .tabActive_nutrition,
+.tabActive_nutrition:hover,
+[data-theme="dark"] .tabActive_nutrition:hover {
+  color: #000;
+  background: #7CFF6B;
+}
+
+/* ─── Panel ──────────────────────────────────────────────────────────────── */
 
 .panel {
   padding: 1.75rem 1.5rem;

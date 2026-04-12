@@ -19,7 +19,7 @@ export function TodoFilters({ filter, onFilterChange }: TodoFiltersProps) {
       {FILTERS.map(f => (
         <button
           key={f}
-          className={`${styles.tab} ${filter === f ? styles.active : ""}`}
+          className={`${styles.tab} ${filter === f ? styles[`active_${f}`] : ""}`}
           onClick={() => onFilterChange(f)}
         >
           {t(f)}

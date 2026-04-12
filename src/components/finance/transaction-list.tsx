@@ -18,7 +18,7 @@ export function TransactionList({ transactions }: TransactionListProps) {
       ) : (
         <ul className={styles.list}>
           {transactions.map(tx => (
-            <li key={tx.id} className={`${styles.item} glass`}>
+            <li key={tx.id} className={styles.item}>
               <span className={styles.amount}>+{tx.amount.toLocaleString()}</span>
               <span className={styles.date}>{tx.date}</span>
               {tx.pointsAwarded > 0 && (

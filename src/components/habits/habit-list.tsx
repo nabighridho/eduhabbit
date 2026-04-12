@@ -118,7 +118,7 @@ export function HabitList() {
       {toast && <div className={styles.toast}>{toast}</div>}
 
       {/* Progress summary */}
-      <div className={`${styles.progressCard} glass`}>
+      <div className={styles.progressCard}>
         <div className={styles.progressHeader}>
           <span className={styles.progressTitle}>{t("progress.title")}</span>
           <span className={styles.progressCounter}>

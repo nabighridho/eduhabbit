@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import type { NutritionLog } from "@/db/schema";
+import { CustomSelect } from "@/components/ui/CustomSelect";
 import styles from "./NutritionAdvisor.module.css";
 
 interface NutritionAdvisorProps {
@@ -70,38 +71,30 @@ export function NutritionAdvisor({ initialNutrition, onSuccess }: NutritionAdvis
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.field}>
         <label className={styles.label}>{t("dietType")}</label>
-        <select
-          className={styles.select}
+        <CustomSelect
+          options={["fasting", "diet", "normal"].map((opt) => ({
+            value: opt,
+            label: t(`dietOptions.${opt}`),
+          }))}
           value={dietType}
-          onChange={(e) => setDietType(e.target.value)}
+          onChange={setDietType}
           disabled={loading}
-        >
-          {(["fasting", "diet", "normal"] as const).map(
-            (opt) => (
-              <option key={opt} value={opt}>
-                {t(`dietOptions.${opt}`)}
-              </option>
-            )
-          )}
-        </select>
+          accentColor="#7CFF6B"
+        />
       </div>
 
       <div className={styles.field}>
         <label className={styles.label}>{t("activityLevel")}</label>
-        <select
-          className={styles.select}
+        <CustomSelect
+          options={["sedentary", "light", "moderate", "active", "very_active"].map((opt) => ({
+            value: opt,
+            label: t(`activityOptions.${opt}`),
+          }))}
           value={activityLevel}
-          onChange={(e) => setActivityLevel(e.target.value)}
+          onChange={setActivityLevel}
           disabled={loading}
-        >
-          {(["sedentary", "light", "moderate", "active", "very_active"] as const).map(
-            (opt) => (
-              <option key={opt} value={opt}>
-                {t(`activityOptions.${opt}`)}
-              </option>
-            )
-          )}
-        </select>
+          accentColor="#7CFF6B"
+        />
       </div>
 
       {error && <p className={styles.error}>{error}</p>}

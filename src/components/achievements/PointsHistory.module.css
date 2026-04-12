@@ -1,24 +1,42 @@
 .container {
-  border-radius: 1rem;
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .container {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 6px 6px 0 #FFFDF5;
 }
 
 .title {
   font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-text);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
   margin: 0;
 }
 
+[data-theme="dark"] .title {
+  color: #FFFDF5;
+}
+
 .empty {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin: 0;
-  padding: 1rem 0;
   text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  padding: 2rem;
+  margin: 0;
+}
+
+[data-theme="dark"] .empty {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .list {
@@ -34,17 +52,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.625rem 0.5rem;
-  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #000;
+}
+
+[data-theme="dark"] .entry {
+  border-bottom-color: rgba(250, 250, 250, 0.15);
 }
 
 .entry:last-child {
   border-bottom: none;
-}
-
-.entryAlt {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 0.375rem;
 }
 
 .entryLeft {
@@ -54,11 +71,16 @@
 
 .action {
   font-size: 0.85rem;
-  color: var(--color-text);
+  font-weight: 700;
+  color: #000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
+}
+
+[data-theme="dark"] .action {
+  color: #FFFDF5;
 }
 
 .entryRight {
@@ -71,13 +93,18 @@
 
 .points {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: #22c55e;
+  font-weight: 800;
+  color: #A78BFA;
 }
 
 .date {
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .date {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .loadMoreWrapper {
@@ -88,19 +115,40 @@
 
 .loadMoreBtn {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
   padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
   background: transparent;
-  color: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
 .loadMoreBtn:hover:not(:disabled) {
-  background: var(--color-primary);
-  color: #ffffff;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.loadMoreBtn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000;
+}
+
+[data-theme="dark"] .loadMoreBtn {
+  color: #FFFDF5;
+  border-color: #FFFDF5;
+  box-shadow: 3px 3px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .loadMoreBtn:hover:not(:disabled) {
+  box-shadow: 2px 2px 0 #FFFDF5;
+}
+
+[data-theme="dark"] .loadMoreBtn:active:not(:disabled) {
+  box-shadow: 0 0 0 #FFFDF5;
 }
 
 .loadMoreBtn:disabled {

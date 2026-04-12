@@ -1,17 +1,19 @@
 .card {
   position: relative;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.35);
+  background: #FF9F43;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  padding: 1.5rem;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .card {
+  border-color: #FFFDF5;
+  box-shadow: 6px 6px 0 #FFFDF5;
 }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.15);
-  pointer-events: none;
+  display: none;
 }
 
 .content {
@@ -36,29 +38,29 @@
   align-items: center;
   gap: 0.25rem;
   min-width: 6rem;
+  text-align: center;
 }
 
 .levelLabel {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+  color: #000;
 }
 
 .levelNumber {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #000;
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .levelTitle {
   font-size: 1rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .xpSection {
@@ -66,6 +68,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .xpSection {
+    margin-top: 0;
+  }
 }
 
 .xpRow {
@@ -75,51 +84,47 @@
 }
 
 .xpLabel {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 
 .xpValue {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #000;
 }
 
 .progressTrack {
-  height: 0.625rem;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 9999px;
+  height: 10px;
+  border: 3px solid #000;
+  background: rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 
 .progressBar {
   height: 100%;
-  background: #ffffff;
-  border-radius: 9999px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  background: #000;
 }
 
 .pointsToNext {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
 .nextLevelName {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .maxLevel {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #000;
+  letter-spacing: 0.05em;
   padding: 0.5rem 1rem;
   text-align: center;
 }

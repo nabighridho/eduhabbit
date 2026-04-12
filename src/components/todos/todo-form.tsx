@@ -39,7 +39,7 @@ export function TodoForm({ todo, onSubmit, onCancel }: TodoFormProps) {
   };
 
   return (
-    <div className={`${styles.form} glass`}>
+    <div className={styles.form}>
       <h2 className={styles.heading}>{todo ? t("editTask") : t("addTask")}</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.field}>

@@ -9,10 +9,16 @@
   position: relative;
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   overflow: hidden;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+[data-theme="dark"] .avatarContainer {
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
 }
 
 .avatarContainer:hover .overlay {
@@ -32,10 +38,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
+  background: #A78BFA;
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
+  font-weight: 900;
+  color: #000;
   text-transform: uppercase;
   user-select: none;
 }
@@ -43,19 +49,19 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.2s ease;
-  border-radius: 50%;
 }
 
 .overlayText {
-  color: #fff;
+  color: #FFFDF5;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
   text-align: center;
   padding: 0 0.5rem;
 }
@@ -66,19 +72,39 @@
 
 .changeBtn {
   padding: 0.5rem 1.25rem;
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text);
+  background: #A78BFA;
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
   font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.changeBtn:hover {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+[data-theme="dark"] .changeBtn {
+  border-color: #FFFDF5;
+  box-shadow: 3px 3px 0 #FFFDF5;
+}
+
+.changeBtn:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+[data-theme="dark"] .changeBtn:hover:not(:disabled) {
+  box-shadow: 2px 2px 0 #FFFDF5;
+}
+
+.changeBtn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000;
+}
+
+[data-theme="dark"] .changeBtn:active:not(:disabled) {
+  box-shadow: 0 0 0 #FFFDF5;
 }
 
 .changeBtn:disabled {
@@ -88,14 +114,20 @@
 
 .hint {
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .hint {
+  color: rgba(250, 250, 250, 0.5);
 }
 
 .error {
   font-size: 0.8125rem;
-  color: var(--color-error);
+  color: #FF6B9D;
   text-align: center;
+  font-weight: 700;
 }
 
 .hiddenInput {

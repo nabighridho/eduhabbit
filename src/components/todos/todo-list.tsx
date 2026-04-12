@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { type Todo } from "@/db/schema";
 import { TodoItem } from "./todo-item";
@@ -114,37 +115,70 @@ export function TodoList({ initialTodos }: TodoListProps) {
         </button>
       </div>
 
-      {(showForm || editingTodo) && (
-        <div className={styles.formOverlay} onClick={() => { setShowForm(false); setEditingTodo(null); }}>
-          <div onClick={e => e.stopPropagation()}>
-            <TodoForm
-              todo={editingTodo ?? undefined}
-              onSubmit={editingTodo
-                ? (data) => handleEdit(editingTodo.id, data)
-                : handleAdd
-              }
-              onCancel={() => { setShowForm(false); setEditingTodo(null); }}
-            />
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {(showForm || editingTodo) && (
+          <motion.div
+            className={styles.formOverlay}
+            onClick={() => { setShowForm(false); setEditingTodo(null); }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <motion.div
+              onClick={e => e.stopPropagation()}
+              initial={{ opacity: 0, y: 20, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 22 }}
+            >
+              <TodoForm
+                todo={editingTodo ?? undefined}
+                onSubmit={editingTodo
+                  ? (data) => handleEdit(editingTodo.id, data)
+                  : handleAdd
+                }
+                onCancel={() => { setShowForm(false); setEditingTodo(null); }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className={styles.list}>
-        {filteredTodos.length === 0 ? (
-          <div className={styles.empty}>{t(`empty.${filter}`)}</div>
-        ) : (
-          filteredTodos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              onComplete={handleComplete}
-              onEdit={setEditingTodo}
-              onCancel={handleCancel}
-              onRestore={handleRestore}
-              onDelete={handleDelete}
-            />
-          ))
-        )}
+        <AnimatePresence mode="popLayout">
+          {filteredTodos.length === 0 ? (
+            <motion.div
+              key="empty"
+              className={styles.empty}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {t(`empty.${filter}`)}
+            </motion.div>
+          ) : (
+            filteredTodos.map((todo, i) => (
+              <motion.div
+                key={todo.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ type: "spring", stiffness: 300, damping: 22, delay: i * 0.04 }}
+                layout
+              >
+                <TodoItem
+                  todo={todo}
+                  onComplete={handleComplete}
+                  onEdit={setEditingTodo}
+                  onCancel={handleCancel}
+                  onRestore={handleRestore}
+                  onDelete={handleDelete}
+                />
+              </motion.div>
+            ))
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

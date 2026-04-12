@@ -1,0 +1,85 @@
+.wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -100vh;
+  z-index: 50;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.curtainTop,
+.curtainBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  will-change: transform;
+}
+
+.curtainTop {
+  top: 0;
+  background: var(--color-surface, #09090b);
+  border-bottom: 3px solid var(--color-border, #222);
+}
+
+.curtainBottom {
+  bottom: 0;
+  background: var(--color-surface, #09090b);
+  border-top: 3px solid var(--color-border, #222);
+}
+
+[data-theme="light"] .curtainTop,
+[data-theme="light"] .curtainBottom {
+  background: #fffdf5;
+}
+
+[data-theme="light"] .curtainTop {
+  border-bottom-color: #000;
+}
+
+[data-theme="light"] .curtainBottom {
+  border-top-color: #000;
+}
+
+.brandMark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+[data-theme="light"] .logoCircle {
+  box-shadow: 3px 3px 0 #000;
+}
+
+.logoText {
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text, #fffdf5);
+}
+
+[data-theme="light"] .logoText {
+  color: #000;
+}

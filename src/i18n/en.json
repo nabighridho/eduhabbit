@@ -246,8 +246,11 @@
     "sleep": {
       "title": "Sleep Analysis",
       "description": "Analyze your sleep and get improvement tips",
-      "sleepStart": "When did you go to sleep?",
-      "sleepEnd": "When did you wake up?",
+      "sleepStart": "Bedtime",
+      "sleepEnd": "Wake up",
+      "lastNight": "Last night",
+      "thisMorning": "This morning",
+      "hours": "hours of sleep",
       "submit": "Analyze Sleep",
       "alreadyDone": "You've already analyzed your sleep today",
       "result": "Your sleep analysis"

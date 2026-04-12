@@ -21,6 +21,7 @@ import { BADGES, getLevelFromPoints, getProgressToNextLevel } from "@/lib/achiev
 import { LevelCard } from "@/components/achievements/LevelCard";
 import { BadgeGrid } from "@/components/achievements/BadgeGrid";
 import { PointsHistory } from "@/components/achievements/PointsHistory";
+import { PageTransition } from "@/components/dashboard/PageTransition";
 import styles from "./page.module.css";
 
 // ─── Eligibility helpers ──────────────────────────────────────────
@@ -184,33 +185,37 @@ export default async function AchievementsPage() {
   const totalHistory = totalHistoryRow.count;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{tPages("title")}</h1>
-        <p className={styles.subtitle}>{tPages("subtitle")}</p>
-      </div>
+    <PageTransition>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            <span className={styles.titleAccent}>{tPages("title")}</span>
+          </h1>
+          <p className={styles.subtitle}>{tPages("subtitle")}</p>
+        </div>
 
-      <LevelCard
-        level={levelData.level}
-        title={levelData.title}
-        totalPoints={totalPoints}
-        progress={progressData.next ? progressData : null}
-      />
-
-      <section>
-        <h2 className={styles.sectionTitle}>{t("badges")}</h2>
-        <BadgeGrid badges={badges} />
-      </section>
-
-      <section>
-        <PointsHistory
-          initialHistory={historyRows.map((r) => ({
-            ...r,
-            createdAt: (r.createdAt ?? new Date()).toISOString(),
-          }))}
-          initialTotal={totalHistory}
+        <LevelCard
+          level={levelData.level}
+          title={levelData.title}
+          totalPoints={totalPoints}
+          progress={progressData.next ? progressData : null}
         />
-      </section>
-    </div>
+
+        <section>
+          <h2 className={styles.sectionTitle}>{t("badges")}</h2>
+          <BadgeGrid badges={badges} />
+        </section>
+
+        <section>
+          <PointsHistory
+            initialHistory={historyRows.map((r) => ({
+              ...r,
+              createdAt: (r.createdAt ?? new Date()).toISOString(),
+            }))}
+            initialTotal={totalHistory}
+          />
+        </section>
+      </div>
+    </PageTransition>
   );
 }

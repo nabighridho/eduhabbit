@@ -1,15 +1,30 @@
 .card {
+  background: #FFFDF5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .card {
+  background: #18181B;
+  border-color: #FFFDF5;
+  box-shadow: 6px 6px 0 #FFFDF5;
 }
 
 .purpose {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
   margin: 0;
+}
+
+[data-theme="dark"] .purpose {
+  color: #FFFDF5;
 }
 
 .percentageRow {
@@ -19,27 +34,37 @@
 }
 
 .percentage {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00D4FF;
 }
 
 .label {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .label {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .progressBar {
-  height: 0.75rem;
-  background: var(--color-border);
-  border-radius: 999px;
+  height: 10px;
+  border: 3px solid #000;
+  background: transparent;
   overflow: hidden;
+}
+
+[data-theme="dark"] .progressBar {
+  border-color: #FFFDF5;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  border-radius: 999px;
+  background: #00D4FF;
   transition: width 0.3s ease;
 }
 
@@ -47,19 +72,33 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
+[data-theme="dark"] .amounts {
+  color: rgba(250, 250, 250, 0.5);
+}
+
 .amounts strong {
-  color: var(--color-text);
+  color: #000;
+}
+
+[data-theme="dark"] .amounts strong {
+  color: #FFFDF5;
 }
 
 .dueDate {
-  font-size: 0.875rem;
-  color: var(--color-text-faint);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
   margin: 0;
+}
+
+[data-theme="dark"] .dueDate {
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .actions {
@@ -71,52 +110,103 @@
 
 .addButton {
   padding: 0.6rem 1.2rem;
-  background: var(--color-primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-md);
+  background: #00D4FF;
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+[data-theme="dark"] .addButton {
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
 }
 
 .addButton:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+[data-theme="dark"] .addButton:hover {
+  box-shadow: 3px 3px 0 #FFFDF5;
+}
+
+.addButton:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+[data-theme="dark"] .addButton:active {
+  box-shadow: 1px 1px 0 #FFFDF5;
 }
 
 .completeButton {
   padding: 0.6rem 1.2rem;
-  background: var(--color-success);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-md);
+  background: #4ECDC4;
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+[data-theme="dark"] .completeButton {
+  border-color: #FFFDF5;
+  box-shadow: 4px 4px 0 #FFFDF5;
 }
 
 .completeButton:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+[data-theme="dark"] .completeButton:hover {
+  box-shadow: 3px 3px 0 #FFFDF5;
+}
+
+.completeButton:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+[data-theme="dark"] .completeButton:active {
+  box-shadow: 1px 1px 0 #FFFDF5;
 }
 
 .cancelButton {
   padding: 0.6rem 1.2rem;
   background: transparent;
-  color: var(--color-error);
-  border: 1px solid var(--color-error);
-  border-radius: var(--radius-md);
+  color: #FF6B9D;
+  border: 3px solid #FF6B9D;
+  box-shadow: 3px 3px 0 #FF6B9D;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .cancelButton:hover {
-  background: rgba(239, 68, 68, 0.08);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #FF6B9D;
+}
+
+.cancelButton:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0 #FF6B9D;
 }
 
 @media (max-width: 640px) {
