@@ -1,0 +1,323 @@
+.dialSection {
+  position: relative;
+  /* Use a height tall enough to trigger scroll over 4 items */
+  height: 300vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  z-index: 10;
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+}
+
+[data-theme="dark"] .dialSection {
+  background: var(--color-bg);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 72px; /* Height of the Navbar */
+  height: calc(100vh - 72px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--container-px);
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+}
+
+/* ────────────────────────────────────────────────────────
+   Left Content Panel
+──────────────────────────────────────────────────────── */
+
+.contentPanel {
+  flex: 0 0 45%;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: clamp(2rem, 10vh, 6rem);
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.4rem 1.2rem;
+  background: linear-gradient(135deg, #FF6B6B, #C4B5FD);
+  border-radius: 100px;
+  color: #fff;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.activeContentContainer {
+  position: relative;
+  height: 320px; 
+  width: 100%;
+}
+
+.activeContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featureAccent {
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.featureBody {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ctaButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* ────────────────────────────────────────────────────────
+   Right Dial Panel
+──────────────────────────────────────────────────────── */
+
+.dialPanel {
+  position: absolute;
+  top: 50%;
+  right: -300px; /* Offset so it behaves like it's clipped */
+  transform: translateY(-50%);
+  width: 800px;
+  height: 800px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dialWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer Glow/Border */
+.ring1 {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: inset 10px 10px 40px rgba(0,0,0,0.02),
+              inset -10px -10px 40px rgba(255,255,255,0.8);
+}
+
+[data-theme="dark"] .ring1 {
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: inset 10px 10px 40px rgba(0,0,0,0.4),
+              inset -10px -10px 40px rgba(255,255,255,0.02);
+}
+
+/* Inner rings */
+.ring2 {
+  position: absolute;
+  inset: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.03);
+  box-shadow: 0 0 50px rgba(0,0,0,0.02);
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent);
+}
+
+[data-theme="dark"] .ring2 {
+  border: 2px solid rgba(255,255,255,0.03);
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+}
+
+.ring3 {
+  position: absolute;
+  inset: 240px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.05);
+  border: 4px solid rgba(0,0,0,0.02);
+}
+
+[data-theme="dark"] .ring3 {
+  background: #101012;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+  border: 4px solid rgba(255,255,255,0.02);
+}
+
+/* Nodes placed mathematically */
+.node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+[data-theme="dark"] .node {
+  background: #1A1A1E;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.node.active {
+  color: #fff !important;
+}
+
+/* ────────────────────────────────────────────────────────
+   Mobile View logic 
+──────────────────────────────────────────────────────── */
+
+.mobileFallback {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .dialPanel {
+    right: -450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dialSection {
+    height: auto;
+    padding: var(--section-py-lg) 0;
+  }
+  
+  .stickyContainer {
+    display: none; /* Hide sticky implementation on mobile */
+  }
+  
+  .mobileFallback {
+    display: block;
+    width: 100%;
+    padding: 0 var(--container-px);
+  }
+  
+  .header {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 3rem;
+  }
+  
+  .mobileGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mobileCard {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  [data-theme="dark"] .mobileCard {
+    background: #141416;
+    border-color: rgba(255,255,255,0.06);
+  }
+  
+  .mobileIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mobileTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mobileBody {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+}

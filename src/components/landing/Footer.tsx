@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { LuZap } from "react-icons/lu";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -14,37 +13,17 @@ export function Footer() {
           {/* Brand column */}
           <div className={styles.brandCol}>
             <div className={styles.brand}>
-              <LuZap size={18} className={styles.logoIcon} />
+              <img src="/logo.png" alt="EduHabit" className={styles.logoImg} />
               <span>EduHabit</span>
             </div>
             <p className={styles.tagline}>{t("tagline")}</p>
           </div>
 
-          {/* Product column */}
+          {/* Product column — only Features */}
           <div className={styles.linkCol}>
             <h4 className={styles.colTitle}>{t("product")}</h4>
             <Link href="#features" className={styles.link}>
               {t("features")}
-            </Link>
-            <Link href="#" className={styles.link}>
-              {t("pricing")}
-            </Link>
-            <Link href="#" className={styles.link}>
-              {t("updates")}
-            </Link>
-          </div>
-
-          {/* Company column */}
-          <div className={styles.linkCol}>
-            <h4 className={styles.colTitle}>{t("company")}</h4>
-            <Link href="#" className={styles.link}>
-              {t("about")}
-            </Link>
-            <Link href="#" className={styles.link}>
-              {t("blog")}
-            </Link>
-            <Link href="#" className={styles.link}>
-              {t("contact")}
             </Link>
           </div>
 

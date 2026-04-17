@@ -8,7 +8,7 @@
 
 [data-theme="dark"] .storyContainer {
   background: #09090B;
-  border-bottom-color: #FFFDF5;
+  border-bottom-color: rgba(255, 253, 245, 0.15);
 }
 
 .statementsWrapper {
@@ -31,8 +31,8 @@
 }
 
 [data-theme="dark"] .statement {
-  border-color: #FFFDF5;
-  box-shadow: 6px 6px 0 #FFFDF5;
+  border-color: rgba(255, 253, 245, 0.15);
+  box-shadow: 6px 6px 0 rgba(255, 253, 245, 0.08);
 }
 
 .reversed {

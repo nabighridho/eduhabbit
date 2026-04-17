@@ -15,7 +15,7 @@
 [data-theme="dark"] .hero {
   background: #09090B;
   color: #FFFDF5;
-  border-bottom-color: #FFFDF5;
+  border-bottom-color: rgba(255, 253, 245, 0.15);
 }
 
 /* ─── Decorative Shapes ──────────────────────────────────────────────────── */

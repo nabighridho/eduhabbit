@@ -4,7 +4,7 @@ import { SkipNav } from "@/components/landing/SkipNav";
 import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { StorySection } from "@/components/landing/StorySection";
-import { FeaturesBento } from "@/components/landing/FeaturesBento";
+import { FeaturesDial } from "@/components/landing/FeaturesDial";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
 
@@ -19,7 +19,7 @@ export default async function HomePage() {
       <main id="main-content" style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
         <HeroSection hasSession={hasSession} />
         <StorySection />
-        <FeaturesBento />
+        <FeaturesDial />
         <CTASection hasSession={hasSession} />
       </main>
       <Footer />

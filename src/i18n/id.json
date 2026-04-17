@@ -13,11 +13,11 @@
       "noAccount": "Belum punya akun?",
       "registerLink": "Daftar",
       "errorInvalid": "Email atau kata sandi salah",
-      "errorGeneric": "Terjadi kesalahan. Silakan coba lagi."
+      "errorGeneric": "Ada yang tidak beres. Coba lagi, ya."
     },
     "register": {
-      "title": "Buat Akun",
-      "subtitle": "Mulai perjalanan kebiasaanmu hari ini",
+      "title": "Buat Akun Baru",
+      "subtitle": "Mulai bangun kebiasaan baikmu hari ini",
       "nameLabel": "Nama Lengkap",
       "namePlaceholder": "Namamu",
       "emailLabel": "Email",
@@ -25,20 +25,20 @@
       "passwordLabel": "Kata Sandi",
       "passwordPlaceholder": "Buat kata sandi",
       "confirmPasswordLabel": "Konfirmasi Kata Sandi",
-      "confirmPasswordPlaceholder": "Ulangi kata sandimu",
+      "confirmPasswordPlaceholder": "Ketik ulang kata sandimu",
       "submitButton": "Buat Akun",
-      "loadingButton": "Membuat akun...",
+      "loadingButton": "Sedang membuat akun...",
       "hasAccount": "Sudah punya akun?",
       "loginLink": "Masuk",
       "errorPasswordMismatch": "Kata sandi tidak cocok",
       "errorEmailTaken": "Email sudah terdaftar",
-      "errorGeneric": "Terjadi kesalahan. Silakan coba lagi."
+      "errorGeneric": "Ada yang tidak beres. Coba lagi, ya."
     }
   },
   "nav": {
     "dashboard": "Beranda",
-    "health": "Insight Kesehatan",
-    "todos": "Daftar Tugas",
+    "health": "Kesehatan",
+    "todos": "Tugas",
     "finance": "Keuangan",
     "habits": "Kebiasaan",
     "achievements": "Pencapaian",
@@ -47,13 +47,13 @@
   },
   "common": {
     "loading": "Memuat...",
-    "error": "Terjadi kesalahan",
+    "error": "Ada yang tidak beres",
     "save": "Simpan",
     "cancel": "Batal",
     "delete": "Hapus",
     "confirm": "Konfirmasi",
     "close": "Tutup",
-    "edit": "Edit",
+    "edit": "Ubah",
     "add": "Tambah",
     "back": "Kembali",
     "next": "Lanjut",
@@ -61,17 +61,17 @@
     "comingSoon": "Segera Hadir"
   },
   "pages": {
-    "dashboard": { "title": "Beranda", "subtitle": "Ringkasan harianmu" },
-    "health": { "title": "Insight Kesehatan", "subtitle": "Pantau kesehatanmu" },
-    "todos": { "title": "Daftar Tugas", "subtitle": "Kelola tugasmu" },
-    "finance": { "title": "Keuangan", "subtitle": "Pantau tabunganmu" },
-    "habits": { "title": "Kebiasaan", "subtitle": "Bangun kebiasaan harian" },
-    "achievements": { "title": "Pencapaian", "subtitle": "Progres dan lencana kamu" },
-    "profile": { "title": "Profil", "subtitle": "Pengaturan akun kamu" }
+    "dashboard": { "title": "Beranda", "subtitle": "Ringkasan aktivitasmu hari ini" },
+    "health": { "title": "Kesehatan", "subtitle": "Pantau kondisi kesehatanmu" },
+    "todos": { "title": "Tugas", "subtitle": "Atur dan kelola tugasmu" },
+    "finance": { "title": "Keuangan", "subtitle": "Pantau progres tabunganmu" },
+    "habits": { "title": "Kebiasaan", "subtitle": "Bangun kebiasaan positif setiap hari" },
+    "achievements": { "title": "Pencapaian", "subtitle": "Lihat progres dan lencana kamu" },
+    "profile": { "title": "Profil", "subtitle": "Kelola pengaturan akunmu" }
   },
   "todos": {
     "title": "Daftar Tugas",
-    "subtitle": "Kelola tugas Anda dan tetap produktif",
+    "subtitle": "Atur tugasmu dan tetap produktif",
     "addTask": "Tambah Tugas",
     "editTask": "Edit Tugas",
     "deleteTask": "Hapus Tugas",
@@ -79,33 +79,33 @@
     "restoreTask": "Pulihkan Tugas",
     "filters": {
       "all": "Semua",
-      "pending": "Tertunda",
+      "pending": "Belum Selesai",
       "done": "Selesai",
       "cancelled": "Dibatalkan"
     },
     "form": {
       "title": "Judul Tugas",
-      "titlePlaceholder": "Apa yang perlu Anda lakukan?",
+      "titlePlaceholder": "Apa yang perlu kamu kerjakan?",
       "description": "Deskripsi",
       "descriptionPlaceholder": "Tambahkan detail (opsional)",
-      "dueDate": "Tanggal Jatuh Tempo",
+      "dueDate": "Tenggat Waktu",
       "save": "Simpan",
       "cancel": "Batal",
       "titleRequired": "Judul wajib diisi"
     },
     "status": {
-      "pending": "Tertunda",
+      "pending": "Belum Selesai",
       "done": "Selesai",
       "cancelled": "Dibatalkan"
     },
     "empty": {
-      "all": "Belum ada tugas. Tambahkan tugas pertama Anda!",
-      "pending": "Tidak ada tugas tertunda. Kerja bagus!",
-      "done": "Belum ada tugas yang selesai.",
+      "all": "Belum ada tugas. Yuk, tambahkan tugas pertamamu!",
+      "pending": "Tidak ada tugas yang menunggu. Bagus!",
+      "done": "Belum ada tugas yang diselesaikan.",
       "cancelled": "Tidak ada tugas yang dibatalkan."
     },
     "toast": {
-      "added": "Tugas ditambahkan!",
+      "added": "Tugas berhasil ditambahkan!",
       "completed": "Tugas selesai! +100 poin",
       "deleted": "Tugas dihapus",
       "updated": "Tugas diperbarui",
@@ -113,14 +113,14 @@
       "restored": "Tugas dipulihkan"
     },
     "overdue": "Terlambat",
-    "dueToday": "Jatuh tempo hari ini",
+    "dueToday": "Hari ini",
     "noDescription": "Tidak ada deskripsi",
-    "confirmDelete": "Hapus tugas ini?",
-    "confirmCancel": "Batalkan tugas ini?"
+    "confirmDelete": "Yakin mau hapus tugas ini?",
+    "confirmCancel": "Yakin mau batalkan tugas ini?"
   },
   "habits": {
     "title": "Kebiasaan Harian",
-    "subtitle": "Bangun konsistensi satu hari dalam satu waktu",
+    "subtitle": "Bangun konsistensi, satu hari dalam satu waktu",
     "addHabit": "Tambah Kebiasaan",
     "deactivate": "Nonaktifkan",
     "activate": "Aktifkan",
@@ -133,26 +133,26 @@
     },
     "form": {
       "title": "Nama Kebiasaan",
-      "titlePlaceholder": "mis. Lari pagi, Baca 30 menit...",
-      "type": "Tipe",
+      "titlePlaceholder": "contoh: Lari pagi, Baca 30 menit...",
+      "type": "Kategori",
       "save": "Simpan",
       "cancel": "Batal",
       "titleRequired": "Nama kebiasaan wajib diisi",
-      "typeRequired": "Pilih tipe kebiasaan"
+      "typeRequired": "Pilih kategori kebiasaan"
     },
     "progress": {
       "title": "Progres Hari Ini",
-      "counter": "{completed} / {total} kebiasaan selesai"
+      "counter": "{completed} dari {total} kebiasaan selesai"
     },
     "graph": {
       "title": "Riwayat Kebiasaan",
       "tooltip": "{count} kebiasaan pada {date}",
-      "less": "Kurang",
-      "more": "Lebih"
+      "less": "Sedikit",
+      "more": "Banyak"
     },
     "empty": {
-      "noHabits": "Belum ada kebiasaan. Tambahkan kebiasaan pertama Anda!",
-      "noActive": "Tidak ada kebiasaan aktif. Aktifkan salah satu untuk memulai."
+      "noHabits": "Belum ada kebiasaan. Yuk, mulai dari yang kecil!",
+      "noActive": "Tidak ada kebiasaan aktif. Aktifkan salah satu untuk mulai."
     },
     "toast": {
       "added": "Kebiasaan ditambahkan!",
@@ -172,11 +172,11 @@
     }
   },
   "finance": {
-    "noActiveTarget": "Kamu belum memiliki tujuan tabungan yang aktif.",
-    "createFirst": "Buat Tujuan Tabungan Pertamamu",
-    "createTarget": "Buat Tujuan Tabungan",
+    "noActiveTarget": "Kamu belum punya target tabungan yang aktif.",
+    "createFirst": "Buat Target Tabungan Pertama",
+    "createTarget": "Buat Target Tabungan",
     "purpose": "Tujuan",
-    "purposePlaceholder": "mis. Laptop baru, Dana darurat...",
+    "purposePlaceholder": "contoh: Laptop baru, Dana darurat...",
     "targetAmount": "Target Jumlah",
     "currentAmount": "Jumlah Saat Ini",
     "dueDate": "Tanggal Target (Opsional)",
@@ -185,15 +185,15 @@
     "addMoneyTitle": "Tambah Uang ke Tabungan",
     "amount": "Jumlah",
     "amountPlaceholder": "Masukkan jumlah...",
-    "completeTarget": "Selesaikan Tujuan",
-    "cancelTarget": "Batalkan Tujuan",
-    "confirmComplete": "Tandai tujuan tabungan ini sebagai selesai?",
-    "confirmCancel": "Apakah kamu yakin ingin membatalkan tujuan tabungan ini?",
+    "completeTarget": "Tandai Selesai",
+    "cancelTarget": "Batalkan Target",
+    "confirmComplete": "Tandai target tabungan ini sebagai selesai?",
+    "confirmCancel": "Yakin mau batalkan target tabungan ini?",
     "transactionHistory": "Riwayat Transaksi",
     "noTransactions": "Belum ada transaksi.",
     "transactionAdded": "ditambahkan",
-    "pastTargets": "Tujuan Lalu",
-    "noPastTargets": "Tidak ada tujuan tabungan sebelumnya.",
+    "pastTargets": "Target Sebelumnya",
+    "noPastTargets": "Belum ada riwayat target tabungan.",
     "status": {
       "active": "Aktif",
       "completed": "Selesai",
@@ -210,55 +210,55 @@
       "junior_accountant": "Selesaikan 1 target tabungan",
       "senior_accountant": "Selesaikan 3 target tabungan",
       "financial_wizard": "Selesaikan 5 target tabungan",
-      "big_saver": "Hemat total 1.000.000"
+      "big_saver": "Kumpulkan total tabungan 1.000.000"
     },
     "errors": {
-      "activeTargetExists": "Kamu sudah memiliki tujuan tabungan aktif. Selesaikan atau batalkan terlebih dahulu.",
-      "invalidAmount": "Jumlah harus lebih besar dari 0.",
-      "targetNotFound": "Tujuan tabungan tidak ditemukan.",
-      "alreadyFinished": "Tujuan tabungan ini sudah selesai atau dibatalkan."
+      "activeTargetExists": "Kamu sudah punya target tabungan aktif. Selesaikan atau batalkan dulu yang sekarang.",
+      "invalidAmount": "Jumlah harus lebih dari 0.",
+      "targetNotFound": "Target tabungan tidak ditemukan.",
+      "alreadyFinished": "Target tabungan ini sudah selesai atau dibatalkan."
     },
     "toasts": {
-      "targetCreated": "Tujuan tabungan berhasil dibuat!",
-      "moneyAdded": "Uang berhasil ditambahkan! +100 poin diperoleh.",
-      "targetCompleted": "Tujuan tabungan selesai!",
-      "targetCancelled": "Tujuan tabungan dibatalkan."
+      "targetCreated": "Target tabungan berhasil dibuat!",
+      "moneyAdded": "Uang berhasil ditambahkan! +100 poin",
+      "targetCompleted": "Target tabungan tercapai!",
+      "targetCancelled": "Target tabungan dibatalkan."
     }
   },
   "health": {
     "mood": {
-      "title": "Pemeriksa Suasana Hati",
-      "description": "Periksa suasana hatimu dan dapatkan saran personal",
-      "label": "Bagaimana perasaanmu?",
+      "title": "Cek Suasana Hati",
+      "description": "Cek kondisi mood kamu dan dapatkan saran yang pas",
+      "label": "Bagaimana perasaanmu hari ini?",
       "options": {
         "great": "Luar Biasa",
         "good": "Baik",
-        "okay": "Biasa",
-        "bad": "Buruk",
+        "okay": "Biasa Saja",
+        "bad": "Kurang Baik",
         "awful": "Sangat Buruk"
       },
-      "stressSource": "Apa yang ada di pikiranmu? (opsional)",
-      "sleepQuality": "Kualitas tidur tadi malam (1-10)",
+      "stressSource": "Apa yang sedang kamu pikirkan? (opsional)",
+      "sleepQuality": "Kualitas tidur semalam (1-10)",
       "submit": "Dapatkan Saran",
-      "alreadyDone": "Kamu sudah melakukan check-in hari ini",
-      "result": "Saran personal kamu"
+      "alreadyDone": "Kamu sudah check-in hari ini",
+      "result": "Saran untukmu"
     },
     "sleep": {
       "title": "Analisis Tidur",
-      "description": "Analisis tidurmu dan dapatkan tips perbaikan",
+      "description": "Analisis pola tidurmu dan dapatkan tips untuk perbaikan",
       "sleepStart": "Waktu tidur",
       "sleepEnd": "Waktu bangun",
-      "lastNight": "Tadi malam",
+      "lastNight": "Semalam",
       "thisMorning": "Pagi ini",
       "hours": "jam tidur",
       "submit": "Analisis Tidur",
       "alreadyDone": "Kamu sudah menganalisis tidurmu hari ini",
-      "result": "Analisis tidur kamu"
+      "result": "Hasil analisis tidurmu"
     },
     "nutrition": {
-      "title": "Penasihat Nutrisi",
-      "description": "Dapatkan rencana nutrisi harian yang personal",
-      "dietType": "Pola makan kamu",
+      "title": "Saran Nutrisi",
+      "description": "Dapatkan panduan nutrisi harian yang sesuai kebutuhanmu",
+      "dietType": "Pola makanmu",
       "dietOptions": {
         "fasting": "Puasa",
         "diet": "Diet",
@@ -266,60 +266,60 @@
       },
       "activityLevel": "Tingkat aktivitasmu",
       "activityOptions": {
-        "sedentary": "Tidak Aktif",
+        "sedentary": "Sangat Jarang Bergerak",
         "light": "Ringan",
         "moderate": "Sedang",
         "active": "Aktif",
         "very_active": "Sangat Aktif"
       },
-      "submit": "Dapatkan Rencana Nutrisi",
-      "alreadyDone": "Kamu sudah mendapatkan rencana nutrisi hari ini",
-      "result": "Rencana nutrisi kamu"
+      "submit": "Dapatkan Panduan Nutrisi",
+      "alreadyDone": "Kamu sudah mendapatkan panduan nutrisi hari ini",
+      "result": "Panduan nutrisimu"
     },
     "errors": {
-      "unavailable": "Layanan AI sedang tidak tersedia",
-      "busy": "Layanan AI sibuk, coba lagi sebentar lagi",
-      "failed": "Gagal mendapatkan saran, silakan coba lagi"
+      "unavailable": "Layanan AI sedang tidak tersedia saat ini",
+      "busy": "Layanan AI sedang sibuk, coba lagi sebentar ya",
+      "failed": "Gagal mendapatkan saran. Coba lagi, ya."
     },
-    "points": "+25 poin diperoleh!"
+    "points": "+25 poin didapat!"
   },
   "profile": {
     "title": "Profil",
-    "subtitle": "Kelola pengaturan akun kamu",
+    "subtitle": "Kelola pengaturan akunmu",
     "name": "Nama Tampilan",
-    "namePlaceholder": "Masukkan nama kamu",
+    "namePlaceholder": "Masukkan namamu",
     "status": "Status",
-    "statusPlaceholder": "Apa yang ada di pikiranmu?",
+    "statusPlaceholder": "Lagi ngapain nih?",
     "avatar": "Foto Profil",
-    "avatarHint": "JPG, PNG, GIF atau WebP. Maks 2MB.",
+    "avatarHint": "JPG, PNG, GIF, atau WebP. Maks 2MB.",
     "save": "Simpan Perubahan",
     "saving": "Menyimpan...",
-    "saved": "Tersimpan!",
+    "saved": "Berhasil disimpan!",
     "uploadAvatar": "Ganti Foto",
     "firstStepsBadge": "Lencana Langkah Pertama",
-    "firstStepsBadgeEligible": "Profil kamu sudah lengkap! Klaim lencana di halaman Pencapaian.",
-    "firstStepsBadgeClaimed": "Lencana diklaim!",
-    "errorFileType": "Hanya gambar JPG, PNG, GIF, atau WebP yang diizinkan.",
-    "errorFileSize": "Ukuran file harus di bawah 2MB.",
-    "errorSave": "Gagal menyimpan perubahan. Silakan coba lagi."
+    "firstStepsBadgeEligible": "Profilmu sudah lengkap! Klaim lencana di halaman Pencapaian.",
+    "firstStepsBadgeClaimed": "Lencana sudah diklaim!",
+    "errorFileType": "Format yang didukung: JPG, PNG, GIF, atau WebP.",
+    "errorFileSize": "Ukuran file maksimal 2MB.",
+    "errorSave": "Gagal menyimpan. Coba lagi, ya."
   },
   "achievements": {
     "title": "Pencapaian",
-    "subtitle": "Progres, level, dan lencana kamu",
+    "subtitle": "Lihat progres, level, dan lencana kamu",
     "level": "Level",
     "xp": "XP",
     "progress": "Progres",
     "nextLevel": "Level Berikutnya",
     "maxLevel": "Level Maksimum Tercapai",
-    "pointsToNext": "{points} poin menuju level berikutnya",
+    "pointsToNext": "{points} poin lagi menuju level berikutnya",
     "badges": "Lencana",
     "pointsHistory": "Riwayat Poin",
     "claim": "Klaim",
-    "claimed": "Diklaim",
+    "claimed": "Sudah Diklaim",
     "locked": "Terkunci",
     "earned": "Diraih",
-    "loadMore": "Muat Lebih Banyak",
-    "noBadges": "Tidak ada lencana tersedia.",
+    "loadMore": "Tampilkan Lebih",
+    "noBadges": "Belum ada lencana.",
     "noHistory": "Belum ada riwayat poin.",
     "claimSuccess": "Lencana berhasil diklaim!",
     "alreadyClaimed": "Kamu sudah mengklaim lencana ini.",
@@ -336,7 +336,7 @@
   "dashboard": {
     "summary": {
       "habits": "Kebiasaan",
-      "todosPending": "Tertunda",
+      "todosPending": "Menunggu",
       "healthToday": "Kesehatan",
       "streak": "Streak",
       "dayStreak": "Hari Streak"
@@ -360,22 +360,22 @@
     "habits": {
       "title": "Kebiasaan Hari Ini",
       "completed": "selesai",
-      "noHabits": "Belum ada kebiasaan. Tambahkan kebiasaan untuk dilacak!"
+      "noHabits": "Belum ada kebiasaan. Yuk, tambahkan!"
     },
     "savings": {
       "title": "Tabungan Aktif",
       "progress": "dari target",
       "due": "Tenggat",
-      "noTarget": "Tidak ada target tabungan aktif"
+      "noTarget": "Belum ada target tabungan aktif"
     },
     "todos": {
       "title": "Tugas Terbaru",
       "due": "Tenggat",
-      "allDone": "Semua beres! Tidak ada yang tertunda."
+      "allDone": "Semua beres! Tidak ada yang menunggu."
     },
     "health": {
       "title": "Check-in Kesehatan Terakhir",
-      "mood": "Cek Suasana Hati",
+      "mood": "Cek Mood",
       "sleep": "Analisis Tidur",
       "nutrition": "Saran Nutrisi",
       "noCheckIn": "Belum ada check-in kesehatan"
@@ -386,12 +386,12 @@
       "habits": "Kebiasaan",
       "todos": "Tugas",
       "health": "Kesehatan",
-      "mood": "Suasana Hati",
+      "mood": "Mood",
       "sleep": "Tidur",
       "nutrition": "Nutrisi",
       "noActivity": "Tidak ada aktivitas di hari ini",
       "completed": "Selesai",
-      "pending": "Tertunda",
+      "pending": "Menunggu",
       "done": "Selesai",
       "cancelled": "Dibatalkan",
       "weekDays": ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
@@ -420,70 +420,70 @@
       "menuClose": "Tutup menu"
     },
     "hero": {
-      "badge": "Hidupmu. Teroptimasi.",
-      "title": "Kuasai",
+      "badge": "Hidupmu, Lebih Teratur.",
+      "title": "Atur",
       "titleHighlight": "Kebiasaanmu",
-      "subtitle": "Lacak tugas, kesehatan, keuangan, dan streak—semua dalam satu tempat.",
+      "subtitle": "Pantau tugas, kesehatan, keuangan, dan streak — semua dalam satu tempat.",
       "ctaDashboard": "Ke Beranda",
-      "ctaStart": "Mulai Perjalananmu",
+      "ctaStart": "Mulai Sekarang",
       "ctaSignIn": "Masuk",
-      "scrollHint": "Gulir untuk menjelajah"
+      "scrollHint": "Gulir untuk jelajahi"
     },
     "stats": {
       "items": [
-        { "value": "12K+", "label": "Kebiasaan Terbentuk" },
+        { "value": "12K+", "label": "Kebiasaan Terbangun" },
         { "value": "500+", "label": "Pengguna Aktif" },
-        { "value": "95%", "label": "Tingkat Penyelesaian" },
-        { "value": "4", "label": "Alat Utama" }
+        { "value": "95%", "label": "Tingkat Keberhasilan" },
+        { "value": "4", "label": "Fitur Utama" }
       ]
     },
     "story": {
       "items": [
         {
-          "heading": "Kamu menetapkan tujuan. Kamu membuat rencana.",
-          "body": "Tapi hidup menghalangi. Fokus memudar. Streak terputus."
+          "heading": "Kamu punya target. Kamu punya rencana.",
+          "body": "Tapi realita berkata lain. Fokus buyar. Streak terputus begitu saja."
         },
         {
-          "heading": "Ketidakteraturan menguras energimu.",
-          "body": "Mengelola tugas, melacak kesehatan, dan mengatur keuangan di aplikasi berbeda menyebabkan kelelahan."
+          "heading": "Berantakan itu menguras energi.",
+          "body": "Kelola tugas di sini, catat kesehatan di sana, atur keuangan di tempat lain — capek, kan?"
         },
         {
-          "heading": "Tidak harus sesulit ini.",
-          "body": "Masuki ekosistem terpadu yang dirancang untuk membangun momentum tak terhentikan."
+          "heading": "Nggak harus serumit itu.",
+          "body": "Saatnya pakai satu platform yang bikin semua terasa lebih ringan dan terkoordinasi."
         }
       ]
     },
     "features": {
       "badge": "Fitur",
-      "heading": "Semua yang kamu butuhkan. Tanpa yang tidak perlu.",
-      "subtitle": "Rangkaian alat terpadu yang dirancang untuk bekerja bersama dengan mulus.",
+      "heading": "Semua yang kamu butuhkan, tanpa yang nggak perlu.",
+      "subtitle": "Kumpulan fitur yang saling terhubung dan bekerja bersama secara seamless.",
       "items": [
         {
           "title": "Pelacak Kebiasaan",
-          "body": "Bangun rutinitas konsisten dengan sistem streak yang powerful. Visualisasikan progresmu melalui heatmap interaktif dan jangan pernah putus rantainya."
+          "body": "Bangun rutinitas yang konsisten dengan sistem streak. Lihat progresmu lewat heatmap interaktif dan jaga agar rantainya tidak putus."
         },
         {
           "title": "Todo Pintar",
-          "body": "Atur harimu. Prioritaskan tugas dan jernihkan pikiranmu."
+          "body": "Atur harimu dengan mudah. Prioritaskan tugas dan jernihkan pikiranmu."
         },
         {
-          "title": "Kecerdasan Kesehatan",
-          "body": "Insight berbasis AI yang menganalisis tidur, suasana hati, dan nutrisimu."
+          "title": "Insight Kesehatan",
+          "body": "Saran berbasis AI yang menganalisis tidur, mood, dan nutrisimu secara personal."
         },
         {
-          "title": "Tujuan Keuangan",
-          "body": "Lacak target tabunganmu dengan presisi tinggi. Visualisasikan perjalananmu menuju kebebasan finansial langsung bersama kebiasaan pribadimu."
+          "title": "Target Keuangan",
+          "body": "Pantau target tabunganmu dengan detail. Lihat progres menuju tujuan finansialmu langsung berdampingan dengan kebiasaan harianmu."
         }
       ]
     },
     "cta": {
-      "heading": "Siap mengambil kendali?",
-      "body": "Bergabunglah dengan ribuan orang lain yang telah mengubah rutinitas kacau mereka menjadi momentum tak terhentikan.",
+      "heading": "Siap ambil kendali?",
+      "body": "Gabung bersama ribuan orang yang sudah mengubah rutinitas berantakan jadi momentum yang nggak terhentikan.",
       "ctaDashboard": "Kembali ke Beranda",
       "ctaStart": "Mulai Gratis"
     },
     "footer": {
-      "tagline": "Bangun kebiasaan lebih baik dan kelola kehidupan harianmu.",
+      "tagline": "Bangun kebiasaan yang lebih baik dan kelola hidupmu sehari-hari.",
       "product": "Produk",
       "features": "Fitur",
       "pricing": "Harga",

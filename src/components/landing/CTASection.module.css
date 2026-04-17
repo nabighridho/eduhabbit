@@ -1,6 +1,6 @@
 .ctaContainer {
   padding: var(--section-py-lg) var(--container-px) 10rem;
-  background: #000;
+  background: #0a0a0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,8 +9,12 @@
   font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
 }
 
+[data-theme="light"] .ctaContainer {
+  background: #0a0a0c;
+}
+
 [data-theme="dark"] .ctaContainer {
-  background: #FFFDF5;
+  background: #111114;
 }
 
 .content {
@@ -26,8 +30,8 @@
 
 [data-theme="dark"] .content {
   background: #FF6B6B;
-  border-color: #000;
-  box-shadow: 8px 8px 0 #000;
+  border-color: rgba(255, 253, 245, 0.2);
+  box-shadow: 8px 8px 0 rgba(255, 253, 245, 0.1);
 }
 
 .content h2 {
