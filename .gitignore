@@ -4,7 +4,7 @@ node_modules/
 # Environment variables
 .env.local
 .env.*.local
-
+.env
 # Database
 *.db
 *.db-shm

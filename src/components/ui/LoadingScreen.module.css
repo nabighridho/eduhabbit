@@ -1,0 +1,228 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #09090B;
+  overflow: hidden;
+}
+
+[data-theme="light"] .overlay {
+  background: #FFFDF5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* ─── Logo ─────────────────────────────────────────────────────────── */
+
+.logoWrapper {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.15), transparent 70%);
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(255, 107, 107, 0.3));
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ─── Brand Name ───────────────────────────────────────────────────── */
+
+.brandName {
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFFDF5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+[data-theme="light"] .brandName {
+  color: #0a0a0c;
+}
+
+.brandAccent {
+  background: linear-gradient(135deg, #FF6B6B, #C4B5FD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Progress ─────────────────────────────────────────────────────── */
+
+.progressSection {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+[data-theme="light"] .progressTrack {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B6B, #C4B5FD, #4ECDC4);
+  border-radius: 100px;
+  transition: width 0.1s ease-out;
+  position: relative;
+}
+
+.progressFill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 107, 107, 0.6);
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressLabel {
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+[data-theme="light"] .progressLabel {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.progressPercent {
+  font-family: var(--font-grotesk, "Space Grotesk", sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+[data-theme="light"] .progressPercent {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ─── Decorative Elements ──────────────────────────────────────────── */
+
+.decorCircle1 {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 107, 107, 0.15);
+  border-radius: 50%;
+  animation: decorFloat1 6s ease-in-out infinite;
+}
+
+.decorCircle2 {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(196, 181, 253, 0.15);
+  border-radius: 50%;
+  animation: decorFloat2 8s ease-in-out infinite;
+}
+
+.decorSquare {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgba(255, 217, 61, 0.1);
+  transform: rotate(45deg);
+  animation: decorFloat3 7s ease-in-out infinite;
+}
+
+@keyframes decorFloat1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(180deg); }
+}
+
+@keyframes decorFloat2 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.1); }
+}
+
+@keyframes decorFloat3 {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(-8px); }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+  .logoWrapper {
+    width: 72px;
+    height: 72px;
+  }
+  .brandName {
+    font-size: 1.5rem;
+  }
+  .progressSection {
+    width: 160px;
+  }
+  .decorCircle1,
+  .decorCircle2,
+  .decorSquare {
+    display: none;
+  }
+}

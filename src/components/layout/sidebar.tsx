@@ -130,7 +130,7 @@ export function Sidebar({ isOpen, onClose, collapsed = false, onToggleCollapse }
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""} ${collapsed ? styles.collapsed : ""}`}>
         {/* Logo / Brand */}
         <div className={styles.brand}>
-          <span className={styles.logoMark}>E</span>
+          <img src="/logo.png" alt="EduHabit" className={styles.logoMark} style={{ width: 28, height: 28, objectFit: 'contain' }} />
           <span className={styles.brandText}>EduHabit</span>
           <button
             className={`${styles.menuBtn} ${styles.mobileCloseBtn}`}

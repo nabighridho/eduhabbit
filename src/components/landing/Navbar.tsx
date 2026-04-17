@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { LuZap, LuMenu, LuX } from "react-icons/lu";
+import { LuMenu, LuX } from "react-icons/lu";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
@@ -54,7 +54,7 @@ export function Navbar({ hasSession }: { hasSession: boolean }) {
     >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <LuZap size={20} className={styles.logoIcon} />
+          <img src="/logo.png" alt="EduHabit" className={styles.logoImg} />
           <span>EduHabit</span>
         </Link>
 

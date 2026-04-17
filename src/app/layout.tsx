@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Providers } from "@/components/providers";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -41,7 +42,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <Providers>{children}</Providers>
+          <Providers>
+            <LoadingScreen />
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
